@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "": [
+      { "model": "coffeecolor:block/color_grass_block" },
+      { "model": "coffeecolor:block/color_grass_block", "y": 90 },
+      { "model": "coffeecolor:block/color_grass_block", "y": 180 },
+      { "model": "coffeecolor:block/color_grass_block", "y": 270 }
+    ]
+  }
+}
