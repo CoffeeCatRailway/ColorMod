@@ -46,7 +46,10 @@ public class ColorMod {
         REGISTRATE = ColorRegistrate.create(MOD_ID, modEventBus);
 
         ColorBlocks.load();
+        ColorItems.load();
         ColorTileEntities.load();
+        ColorBiomes.load();
+        ColorBiomes.DIMENSIONS.register(modEventBus);
     }
 
     public void setupClient(final FMLCommonSetupEvent event) {
@@ -59,6 +62,11 @@ public class ColorMod {
     public void setupCommon(FMLCommonSetupEvent event) {
         ColorBiomes.addBiomeTypes();
         ColorBiomes.addBiomeFeatures();
+    }
+
+    @SubscribeEvent
+    public static void registerToManager(final RegisterDimensionsEvent event) {
+        ColorBiomes.COLOR_DIMENSION_TYPE = DimensionManager.registerOrGetDimension(ColorMod.getLocation("color_dimension"), ColorBiomes.COLOR_DIMENSION.get(), null, true);
     }
 
     public static ResourceLocation getLocation(String path) {
