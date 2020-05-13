@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "coffeecolor:item/magic_color_dye"
+  }
+}

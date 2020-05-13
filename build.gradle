@@ -64,15 +64,20 @@ minecraft {
 
             property 'forge.logging.console.level', 'debug'
 
-            args '--mod', 'coffeecolor', '--all', '--output', file('src/generated/resources/')
-
             mods {
                 coffeecolor {
                     source sourceSets.main
                 }
             }
+
+            args '--mod', 'coffeecolor', '--all', '--output', '"' + rootProject.file('src/generated/resources/') + '"',
+                    '--existing', '"' + rootProject.file('src/main/resources') + '"'
         }
     }
+}
+
+sourceSets.main.resources {
+    srcDir 'src/generated/resources'
 }
 
 configurations {
