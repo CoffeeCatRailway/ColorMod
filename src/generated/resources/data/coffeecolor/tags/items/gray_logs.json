@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "coffeecolor:gray_log",
+    "coffeecolor:stripped_gray_log",
+    "coffeecolor:gray_wood",
+    "coffeecolor:stripped_gray_wood"
+  ]
+}

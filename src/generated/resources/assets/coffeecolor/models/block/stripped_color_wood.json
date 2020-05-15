@@ -1,0 +1,9 @@
+{
+  "parent": "coffeecolor:block/color_log",
+  "textures": {
+    "side": "coffeecolor:block/stripped_color_log_side",
+    "end": "coffeecolor:block/stripped_color_log_side",
+    "side_overlay": "coffeecolor:block/stripped_color_log_side_overlay",
+    "end_overlay": "coffeecolor:block/stripped_color_log_side_overlay"
+  }
+}

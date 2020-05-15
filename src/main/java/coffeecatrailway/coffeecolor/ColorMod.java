@@ -1,10 +1,9 @@
 package coffeecatrailway.coffeecolor;
 
+import coffeecatrailway.coffeecolor.registrate.ColorModels;
 import coffeecatrailway.coffeecolor.registrate.ColorRegistrate;
-import coffeecatrailway.coffeecolor.registry.ColorBiomes;
-import coffeecatrailway.coffeecolor.registry.ColorBlocks;
-import coffeecatrailway.coffeecolor.registry.ColorItems;
-import coffeecatrailway.coffeecolor.registry.ColorTileEntities;
+import coffeecatrailway.coffeecolor.registry.*;
+import com.tterrag.registrate.providers.ProviderType;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -30,7 +29,7 @@ public class ColorMod {
     public static final Logger LOGGER = LogManager.getLogger();
     public static ColorRegistrate REGISTRATE;
 
-    public static final ItemGroup GROUP = new ItemGroup(MOD_ID + ".tab") {
+    public static final ItemGroup GROUP = new ItemGroup(MOD_ID) {
         @Override
         public ItemStack createIcon() {
             return new ItemStack(ColorBlocks.COLOR_GRASS_BLOCK.get());
@@ -44,6 +43,9 @@ public class ColorMod {
         MinecraftForge.EVENT_BUS.register(this);
 
         REGISTRATE = ColorRegistrate.create(MOD_ID, modEventBus);
+        REGISTRATE.addDataGenerator(ProviderType.BLOCK_TAGS, ColorTags.Blocks.INSTANCE);
+        REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, ColorTags.Items.INSTANCE);
+        REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, ColorModels.INSTANCE);
 
         ColorBlocks.load();
         ColorItems.load();

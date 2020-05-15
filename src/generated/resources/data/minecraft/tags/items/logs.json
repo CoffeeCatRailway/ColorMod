@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "#coffeecolor:magenta_logs",
+    "#coffeecolor:light_gray_logs",
+    "#coffeecolor:cyan_logs",
+    "#coffeecolor:purple_logs",
+    "#coffeecolor:orange_logs",
+    "#coffeecolor:pink_logs",
+    "#coffeecolor:brown_logs",
+    "#coffeecolor:black_logs",
+    "#coffeecolor:yellow_logs",
+    "#coffeecolor:lime_logs",
+    "#coffeecolor:gray_logs",
+    "#coffeecolor:green_logs",
+    "#coffeecolor:light_blue_logs",
+    "#coffeecolor:white_logs",
+    "#coffeecolor:red_logs",
+    "#coffeecolor:blue_logs"
+  ]
+}

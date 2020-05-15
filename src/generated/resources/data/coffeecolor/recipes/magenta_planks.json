@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "coffeecolor:magenta_logs"
+    }
+  ],
+  "result": {
+    "item": "coffeecolor:magenta_planks",
+    "count": 4
+  }
+}

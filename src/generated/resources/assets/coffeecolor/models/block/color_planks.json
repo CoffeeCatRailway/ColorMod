@@ -1,0 +1,47 @@
+{
+  "parent": "block/block",
+  "textures": {
+    "planks": "coffeecolor:block/color_planks",
+    "particle": "coffeecolor:block/color_planks"
+  },
+  "elements": [
+    {
+      "from": [
+        0,
+        0,
+        0
+      ],
+      "to": [
+        16,
+        16,
+        16
+      ],
+      "faces": {
+        "down": {
+          "texture": "planks",
+          "tintindex": 0
+        },
+        "up": {
+          "texture": "planks",
+          "tintindex": 0
+        },
+        "north": {
+          "texture": "planks",
+          "tintindex": 0
+        },
+        "south": {
+          "texture": "planks",
+          "tintindex": 0
+        },
+        "west": {
+          "texture": "planks",
+          "tintindex": 0
+        },
+        "east": {
+          "texture": "planks",
+          "tintindex": 0
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "coffeecolor:block/color_wood",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "coffeecolor:block/color_wood"
+    },
+    "axis=z": {
+      "model": "coffeecolor:block/color_wood",
+      "x": 90
+    }
+  }
+}

@@ -1,15 +1,15 @@
 {
   "variants": {
     "axis=x": {
-      "model": "coffeecolor:block/pink_log",
+      "model": "coffeecolor:block/color_log_default",
       "x": 90,
       "y": 90
     },
     "axis=y": {
-      "model": "coffeecolor:block/pink_log"
+      "model": "coffeecolor:block/color_log_default"
     },
     "axis=z": {
-      "model": "coffeecolor:block/pink_log",
+      "model": "coffeecolor:block/color_log_default",
       "x": 90
     }
   }

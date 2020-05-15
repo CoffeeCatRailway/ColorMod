@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "coffeecolor:white_planks",
+    "coffeecolor:orange_planks",
+    "coffeecolor:magenta_planks",
+    "coffeecolor:light_blue_planks",
+    "coffeecolor:yellow_planks",
+    "coffeecolor:lime_planks",
+    "coffeecolor:pink_planks",
+    "coffeecolor:gray_planks",
+    "coffeecolor:light_gray_planks",
+    "coffeecolor:cyan_planks",
+    "coffeecolor:purple_planks",
+    "coffeecolor:blue_planks",
+    "coffeecolor:brown_planks",
+    "coffeecolor:green_planks",
+    "coffeecolor:red_planks",
+    "coffeecolor:black_planks"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "LL",
+    "LL"
+  ],
+  "key": {
+    "L": {
+      "item": "coffeecolor:light_blue_log"
+    }
+  },
+  "result": {
+    "item": "coffeecolor:light_blue_wood",
+    "count": 3
+  }
+}

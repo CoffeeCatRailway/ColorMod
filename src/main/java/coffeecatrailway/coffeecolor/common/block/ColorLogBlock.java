@@ -12,7 +12,7 @@ public class ColorLogBlock extends LogBlock implements IHasColor {
     private DyeColor color;
 
     public ColorLogBlock(DyeColor color, Properties properties) {
-        super(IHasColor.getMaterialColorFromDyeColor(color), properties);
+        super(color.getMapColor(), properties);
         this.color = color;
     }
 

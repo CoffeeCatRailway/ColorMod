@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "coffeecolor:green_stairs"
+    ]
+  },
+  "criteria": {
+    "has_green_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "coffeecolor:green_planks"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "coffeecolor:green_stairs"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_green_planks",
+      "has_the_recipe"
+    ]
+  ]
+}

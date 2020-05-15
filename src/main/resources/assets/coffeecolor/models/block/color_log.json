@@ -1,11 +1,7 @@
 {
   "parent": "block/block",
   "textures": {
-    "particle": "#side",
-    "end": "coffeecolor:block/color_log_top",
-    "side": "coffeecolor:block/color_log_side",
-    "end_overlay": "coffeecolor:block/color_log_top_overlay",
-    "side_overlay": "coffeecolor:block/color_log_side_overlay"
+    "particle": "#side"
   },
   "elements": [
     {
