@@ -20,6 +20,7 @@ public class ColorRegistrate extends AbstractRegistrate<ColorRegistrate> {
         return new ColorRegistrate(modid).registerEventListeners(eventBus).itemGroup(() -> ColorMod.GROUP);
     }
 
+    // Biomes
     public <T extends Biome> BiomeBuilder<T, ColorRegistrate> biome(NonNullFunction<Biome.Builder, T> factory) {
         return this.biome(this, factory);
     }

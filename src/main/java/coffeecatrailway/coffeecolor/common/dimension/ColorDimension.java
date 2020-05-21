@@ -75,13 +75,11 @@ public class ColorDimension extends Dimension {
                 for (int j = i + 1; j >= 0; --j) {
                     blockpos$mutableblockpos.setPos(posX, j, posZ);
                     BlockState blockstate1 = this.world.getBlockState(blockpos$mutableblockpos);
-                    if (!blockstate1.getFluidState().isEmpty()) {
+                    if (!blockstate1.getFluidState().isEmpty())
                         break;
-                    }
 
-                    if (blockstate1.equals(blockstate)) {
+                    if (blockstate1.equals(blockstate))
                         return blockpos$mutableblockpos.up().toImmutable();
-                    }
                 }
 
                 return null;

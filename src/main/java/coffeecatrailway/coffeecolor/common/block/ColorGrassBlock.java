@@ -3,7 +3,6 @@ package coffeecatrailway.coffeecolor.common.block;
 import coffeecatrailway.coffeecolor.registry.ColorBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.IGrowable;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Direction;
@@ -43,7 +42,7 @@ public class ColorGrassBlock extends Block implements IGrowable {
     @Override
     public void grow(ServerWorld world, Random rand, BlockPos pos, BlockState state) {
         BlockPos blockpos = pos.up();
-        BlockState blockstate = Blocks.AIR.getDefaultState(); //this.tallstate.get().getDefaultState();
+        BlockState blockstate = ColorBlocks.COLOR_GRASS.get().getDefaultState();
 
         for (int i = 0; i < 128; ++i) {
             BlockPos blockpos1 = blockpos;

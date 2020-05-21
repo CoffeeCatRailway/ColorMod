@@ -1,7 +1,7 @@
 package coffeecatrailway.coffeecolor.common.dimension;
 
-import coffeecatrailway.coffeecolor.ColorMod;
 import coffeecatrailway.coffeecolor.registry.ColorBlocks;
+import coffeecatrailway.coffeecolor.registry.ColorTags;
 import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.objects.Object2LongMap;
 import it.unimi.dsi.fastutil.objects.Object2LongOpenHashMap;
@@ -10,7 +10,6 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.NetherPortalBlock;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -300,7 +299,7 @@ public class ColorTeleporter extends Teleporter implements ITeleporter {
                         int l10 = k6 + (i8 - 1) * i3 - j7 * l6;
                         boolean flag = i9 < 0;
                         blockpos$mutable.setPos(l9, j10, l10);
-                        world.setBlockState(blockpos$mutable, flag ? BlockTags.WOOL.getRandomElement(world.rand).getDefaultState() : Blocks.AIR.getDefaultState());
+                        world.setBlockState(blockpos$mutable, flag ? ColorTags.Blocks.COLOR_PORTAL_FRAME.getRandomElement(world.rand).getDefaultState() : Blocks.AIR.getDefaultState());
                     }
                 }
             }
@@ -310,7 +309,7 @@ public class ColorTeleporter extends Teleporter implements ITeleporter {
             for (int j8 = -1; j8 < 4; ++j8) {
                 if (k7 == -1 || k7 == 2 || j8 == -1 || j8 == 3) {
                     blockpos$mutable.setPos(i6 + k7 * l6, k2 + j8, k6 + k7 * i3);
-                    world.setBlockState(blockpos$mutable, BlockTags.WOOL.getRandomElement(world.rand).getDefaultState(), 3);
+                    world.setBlockState(blockpos$mutable, ColorTags.Blocks.COLOR_PORTAL_FRAME.getRandomElement(world.rand).getDefaultState(), 3);
                 }
             }
         }

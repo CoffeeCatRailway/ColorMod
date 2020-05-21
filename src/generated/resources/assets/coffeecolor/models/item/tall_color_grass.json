@@ -1,0 +1,6 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "coffeecolor:block/color_tall_grass_bottom"
+  }
+}

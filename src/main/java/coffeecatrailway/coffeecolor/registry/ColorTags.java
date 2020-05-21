@@ -11,9 +11,7 @@ import net.minecraft.tags.Tag;
 import net.minecraft.util.ResourceLocation;
 
 import javax.annotation.Nullable;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -37,7 +35,46 @@ public class ColorTags {
         @Override
         public void accept(RegistrateTagsProvider<Block> provider) {
             provider.getBuilder(BlockTags.LOGS).add(LOGS.values().toArray(new Tag[]{})).build(BlockTags.LOGS.getId());
+
+            provider.getBuilder(ColorTags.Blocks.COLOR_PORTAL_FRAME)
+                    .add(BlockTags.WOOL)
+                    .add(net.minecraft.block.Blocks.WHITE_CONCRETE, net.minecraft.block.Blocks.WHITE_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.ORANGE_CONCRETE, net.minecraft.block.Blocks.ORANGE_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.MAGENTA_CONCRETE, net.minecraft.block.Blocks.MAGENTA_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.LIGHT_BLUE_CONCRETE, net.minecraft.block.Blocks.LIGHT_BLUE_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.YELLOW_CONCRETE, net.minecraft.block.Blocks.YELLOW_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.LIME_CONCRETE, net.minecraft.block.Blocks.LIME_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.PINK_CONCRETE, net.minecraft.block.Blocks.PINK_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.GRAY_CONCRETE, net.minecraft.block.Blocks.GRAY_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.LIGHT_GRAY_CONCRETE, net.minecraft.block.Blocks.LIGHT_GRAY_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.CYAN_CONCRETE, net.minecraft.block.Blocks.CYAN_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.PURPLE_CONCRETE, net.minecraft.block.Blocks.PURPLE_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.BLUE_CONCRETE, net.minecraft.block.Blocks.BLUE_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.BROWN_CONCRETE, net.minecraft.block.Blocks.BROWN_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.GREEN_CONCRETE, net.minecraft.block.Blocks.GREEN_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.RED_CONCRETE, net.minecraft.block.Blocks.RED_CONCRETE_POWDER)
+                    .add(net.minecraft.block.Blocks.BLACK_CONCRETE, net.minecraft.block.Blocks.BLACK_CONCRETE_POWDER)
+
+                    .add(net.minecraft.block.Blocks.WHITE_TERRACOTTA, net.minecraft.block.Blocks.WHITE_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.ORANGE_TERRACOTTA, net.minecraft.block.Blocks.ORANGE_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.MAGENTA_TERRACOTTA, net.minecraft.block.Blocks.MAGENTA_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.LIGHT_BLUE_TERRACOTTA, net.minecraft.block.Blocks.LIGHT_BLUE_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.YELLOW_TERRACOTTA, net.minecraft.block.Blocks.YELLOW_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.LIME_TERRACOTTA, net.minecraft.block.Blocks.LIME_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.PINK_TERRACOTTA, net.minecraft.block.Blocks.PINK_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.GRAY_TERRACOTTA, net.minecraft.block.Blocks.GRAY_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.LIGHT_GRAY_TERRACOTTA, net.minecraft.block.Blocks.LIGHT_GRAY_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.CYAN_TERRACOTTA, net.minecraft.block.Blocks.CYAN_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.PURPLE_TERRACOTTA, net.minecraft.block.Blocks.PURPLE_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.BLUE_TERRACOTTA, net.minecraft.block.Blocks.BLUE_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.BROWN_TERRACOTTA, net.minecraft.block.Blocks.BROWN_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.GREEN_TERRACOTTA, net.minecraft.block.Blocks.GREEN_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.RED_TERRACOTTA, net.minecraft.block.Blocks.RED_GLAZED_TERRACOTTA)
+                    .add(net.minecraft.block.Blocks.BLACK_TERRACOTTA, net.minecraft.block.Blocks.BLACK_GLAZED_TERRACOTTA)
+                    .build(ColorTags.Blocks.COLOR_PORTAL_FRAME.getId());
         }
+
+        public static final Tag<Block> COLOR_PORTAL_FRAME = tag("color_portal_frame");
 
         public static final Tag<Block> WHITE_LOGS = tagLog("white_logs");
         public static final Tag<Block> ORANGE_LOGS = tagLog("orange_logs");

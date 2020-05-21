@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=upper": {
+      "model": "coffeecolor:block/color_tall_grass_top"
+    },
+    "half=lower": {
+      "model": "coffeecolor:block/color_tall_grass_bottom"
+    }
+  }
+}

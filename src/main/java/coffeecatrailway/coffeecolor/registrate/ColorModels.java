@@ -65,5 +65,19 @@ public class ColorModels implements NonNullConsumer<RegistrateBlockstateProvider
                 .texture("side_overlay", strippedLogSideOverlayTexture)
                 .texture("end_overlay", strippedLogSideOverlayTexture);
         strippedColorWoodDefault.assertExistence();
+
+        ResourceLocation color_cross = ColorMod.getLocation("block/color_cross");
+        ModelBuilder<BlockModelBuilder> sapling = provider.models().withExistingParent("color_sapling", color_cross)
+                .texture("cross", ColorMod.getLocation("block/color_sapling"));
+        sapling.assertExistence();
+        ModelBuilder<BlockModelBuilder> grass = provider.models().withExistingParent("color_grass", color_cross)
+                .texture("cross", ColorMod.getLocation("block/color_grass"));
+        grass.assertExistence();
+        ModelBuilder<BlockModelBuilder> tall_grass_bottom = provider.models().withExistingParent("color_tall_grass_bottom", color_cross)
+                .texture("cross", ColorMod.getLocation("block/color_tall_grass_bottom"));
+        tall_grass_bottom.assertExistence();
+        ModelBuilder<BlockModelBuilder> tall_grass_top = provider.models().withExistingParent("color_tall_grass_top", color_cross)
+                .texture("cross", ColorMod.getLocation("block/color_tall_grass_top"));
+        tall_grass_top.assertExistence();
     }
 }

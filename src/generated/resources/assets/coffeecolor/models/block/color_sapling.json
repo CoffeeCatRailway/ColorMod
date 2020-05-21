@@ -1,0 +1,6 @@
+{
+  "parent": "coffeecolor:block/color_cross",
+  "textures": {
+    "cross": "coffeecolor:block/color_sapling"
+  }
+}

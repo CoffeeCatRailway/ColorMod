@@ -9,6 +9,11 @@ import net.minecraft.item.DyeColor;
 public class ColorRiverBiome extends ColorBiome {
 
     public ColorRiverBiome(Builder builder) {
-        super(builder, DyeColor.CYAN.getColorValue());
+        super(builder, DyeColor.CYAN);
+    }
+
+    @Override
+    public void addFeatures() {
+        super.addFeatures();
     }
 }

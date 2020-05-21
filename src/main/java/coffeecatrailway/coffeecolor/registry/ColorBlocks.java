@@ -1,6 +1,7 @@
 package coffeecatrailway.coffeecolor.registry;
 
 import coffeecatrailway.coffeecolor.ColorMod;
+import coffeecatrailway.coffeecolor.common.biome.feature.tree.*;
 import coffeecatrailway.coffeecolor.common.block.*;
 import coffeecatrailway.coffeecolor.registrate.ColorRegistrate;
 import com.tterrag.registrate.builders.BlockBuilder;
@@ -11,20 +12,31 @@ import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullBiConsumer;
 import com.tterrag.registrate.util.nullness.NonNullUnaryOperator;
+import net.minecraft.advancements.criterion.EnchantmentPredicate;
+import net.minecraft.advancements.criterion.ItemPredicate;
+import net.minecraft.advancements.criterion.MinMaxBounds;
 import net.minecraft.block.Block;
+import net.minecraft.block.DoublePlantBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.data.ShapelessRecipeBuilder;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
+import net.minecraft.item.Items;
+import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.Tag;
 import net.minecraft.util.Direction;
+import net.minecraft.world.storage.loot.*;
+import net.minecraft.world.storage.loot.conditions.*;
+import net.minecraft.world.storage.loot.functions.ExplosionDecay;
+import net.minecraft.world.storage.loot.functions.SetCount;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.common.Tags;
@@ -48,6 +60,22 @@ public class ColorBlocks {
             .blockstate(NonNullBiConsumer.noop()).defaultLang().tag(Tags.Blocks.DIRT)
             .loot((lootTables, block) -> lootTables.registerLootTable(block, RegistrateBlockLootTables.droppingWithSilkTouch(block, COLOR_DIRT.get())))
             .initialProperties(Material.ORGANIC, MaterialColor.GRASS).properties(prop -> prop.tickRandomly().hardnessAndResistance(0.6F).sound(SoundType.PLANT)).simpleItem().register();
+
+    private static NonNullUnaryOperator<Block.Properties> GRASS_PROPS = prop -> prop.sound(SoundType.PLANT).doesNotBlockMovement().hardnessAndResistance(0.0f).notSolid();
+
+    public static final RegistryEntry<ColorDoubleGrassBlock> TALL_COLOR_GRASS = REGISTRATE.object("tall_color_grass").block(ColorDoubleGrassBlock::new)
+            .blockstate((ctx, provider) -> provider.getVariantBuilder(ctx.getEntry())
+                    .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.LOWER)
+                    .modelForState().modelFile(provider.models().getExistingFile(ColorMod.getLocation("block/color_tall_grass_bottom"))).addModel()
+                    .partialState().with(DoublePlantBlock.HALF, DoubleBlockHalf.UPPER)
+                    .modelForState().modelFile(provider.models().getExistingFile(ColorMod.getLocation("block/color_tall_grass_top"))).addModel()
+            ).defaultLoot().defaultLang().initialProperties(Material.TALL_PLANTS, Material.TALL_PLANTS.getColor()).properties(GRASS_PROPS)
+            .item().model((ctx, provider) -> provider.generated(ctx::getEntry, ColorMod.getLocation("block/color_tall_grass_bottom"))).build().register();
+
+    public static final RegistryEntry<ColorTallGrassBlock> COLOR_GRASS = REGISTRATE.object("color_grass").block(ColorTallGrassBlock::new)
+            .blockstate((ctx, provider) -> provider.simpleBlock(ctx.getEntry(), provider.models().getExistingFile(ColorMod.getLocation("block/color_grass"))))
+            .defaultLoot().defaultLang().initialProperties(Material.TALL_PLANTS, Material.TALL_PLANTS.getColor()).properties(GRASS_PROPS)
+            .item().model((ctx, provider) -> provider.generated(ctx::getEntry, ColorMod.getLocation("block/color_grass"))).build().register();
 
     public static final RegistryEntry<ColorPortalBlock> COLOR_PORTAL = REGISTRATE.block("color_portal", ColorPortalBlock::new)
             .blockstate(NonNullBiConsumer.noop()).defaultLang().tag(BlockTags.PORTALS)
@@ -124,6 +152,40 @@ public class ColorBlocks {
     public static final RegistryEntry<ColorLogBlock> STRIPPED_GREEN_WOOD = registerLog("stripped_green_wood", DyeColor.GREEN, ColorTags.Blocks.GREEN_LOGS, true, true, STRIPPED_GREEN_LOG);
     public static final RegistryEntry<ColorLogBlock> STRIPPED_RED_WOOD = registerLog("stripped_red_wood", DyeColor.RED, ColorTags.Blocks.RED_LOGS, true, true, STRIPPED_RED_LOG);
     public static final RegistryEntry<ColorLogBlock> STRIPPED_BLACK_WOOD = registerLog("stripped_black_wood", DyeColor.BLACK, ColorTags.Blocks.BLACK_LOGS, true, true, STRIPPED_BLACK_LOG);
+
+    public static final RegistryEntry<ColorSaplingBlock> WHITE_SAPLING = registerSapling("white_sapling", DyeColor.WHITE, new WhiteTree());
+    public static final RegistryEntry<ColorSaplingBlock> ORANGE_SAPLING = registerSapling("orange_sapling", DyeColor.ORANGE, new OrangeTree());
+    public static final RegistryEntry<ColorSaplingBlock> MAGENTA_SAPLING = registerSapling("magenta_sapling", DyeColor.MAGENTA, new MagentaTree());
+    public static final RegistryEntry<ColorSaplingBlock> LIGHT_BLUE_SAPLING = registerSapling("light_blue_sapling", DyeColor.LIGHT_BLUE, new LightBlueTree());
+    public static final RegistryEntry<ColorSaplingBlock> YELLOW_SAPLING = registerSapling("yellow_sapling", DyeColor.YELLOW, new YellowTree());
+    public static final RegistryEntry<ColorSaplingBlock> LIME_SAPLING = registerSapling("lime_sapling", DyeColor.LIME, new LimeTree());
+    public static final RegistryEntry<ColorSaplingBlock> PINK_SAPLING = registerSapling("pink_sapling", DyeColor.PINK, new PinkTree());
+    public static final RegistryEntry<ColorSaplingBlock> GRAY_SAPLING = registerSapling("gray_sapling", DyeColor.GRAY, new GrayTree());
+    public static final RegistryEntry<ColorSaplingBlock> LIGHT_GRAY_SAPLING = registerSapling("light_gray_sapling", DyeColor.LIGHT_GRAY, new LightGrayTree());
+    public static final RegistryEntry<ColorSaplingBlock> CYAN_SAPLING = registerSapling("cyan_sapling", DyeColor.CYAN, new CyanTree());
+    public static final RegistryEntry<ColorSaplingBlock> PURPLE_SAPLING = registerSapling("purple_sapling", DyeColor.PURPLE, new PurpleTree());
+    public static final RegistryEntry<ColorSaplingBlock> BLUE_SAPLING = registerSapling("blue_sapling", DyeColor.BLUE, new BlueTree());
+    public static final RegistryEntry<ColorSaplingBlock> BROWN_SAPLING = registerSapling("brown_sapling", DyeColor.BROWN, new BrownTree());
+    public static final RegistryEntry<ColorSaplingBlock> GREEN_SAPLING = registerSapling("green_sapling", DyeColor.GREEN, new GreenTree());
+    public static final RegistryEntry<ColorSaplingBlock> RED_SAPLING = registerSapling("red_sapling", DyeColor.RED, new RedTree());
+    public static final RegistryEntry<ColorSaplingBlock> BLACK_SAPLING = registerSapling("black_sapling", DyeColor.BLACK, new BlackTree());
+
+    public static final RegistryEntry<ColorLeavesBlock> WHITE_LEAVES = registerLeaves("white_leaves", DyeColor.WHITE, WHITE_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> ORANGE_LEAVES = registerLeaves("orange_leaves", DyeColor.ORANGE, ORANGE_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> MAGENTA_LEAVES = registerLeaves("magenta_leaves", DyeColor.MAGENTA, MAGENTA_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> LIGHT_BLUE_LEAVES = registerLeaves("light_blue_leaves", DyeColor.LIGHT_BLUE, LIGHT_BLUE_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> YELLOW_LEAVES = registerLeaves("yellow_leaves", DyeColor.YELLOW, YELLOW_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> LIME_LEAVES = registerLeaves("lime_leaves", DyeColor.LIME, LIME_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> PINK_LEAVES = registerLeaves("pink_leaves", DyeColor.PINK, PINK_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> GRAY_LEAVES = registerLeaves("gray_leaves", DyeColor.GRAY, GRAY_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> LIGHT_GRAY_LEAVES = registerLeaves("light_gray_leaves", DyeColor.LIGHT_GRAY, LIGHT_GRAY_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> CYAN_LEAVES = registerLeaves("cyan_leaves", DyeColor.CYAN, CYAN_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> PURPLE_LEAVES = registerLeaves("purple_leaves", DyeColor.PURPLE, PURPLE_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> BLUE_LEAVES = registerLeaves("blue_leaves", DyeColor.BLUE, BLUE_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> BROWN_LEAVES = registerLeaves("brown_leaves", DyeColor.BROWN, BROWN_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> GREEN_LEAVES = registerLeaves("green_leaves", DyeColor.GREEN, GREEN_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> RED_LEAVES = registerLeaves("red_leaves", DyeColor.RED, RED_SAPLING);
+    public static final RegistryEntry<ColorLeavesBlock> BLACK_LEAVES = registerLeaves("black_leaves", DyeColor.BLACK, BLACK_SAPLING);
 
     private static final NonNullUnaryOperator<Block.Properties> PLANKS_PROPS = prop -> prop.hardnessAndResistance(2.0F, 3.0F).sound(SoundType.WOOD);
 
@@ -210,6 +272,39 @@ public class ColorBlocks {
                         : models.getExistingFile(ColorMod.getLocation("block/color_log_default"));
         }
         return model;
+    }
+
+    private static RegistryEntry<ColorSaplingBlock> registerSapling(String id, DyeColor color, ColorTree tree) {
+        return REGISTRATE.object(id).block(prop -> new ColorSaplingBlock(color, tree, prop))
+                .blockstate((ctx, provider) -> provider.simpleBlock(ctx.getEntry(), provider.models().getExistingFile(ColorMod.getLocation("block/color_sapling"))))
+                .defaultLoot().defaultLang().tag(BlockTags.SAPLINGS)
+                .initialProperties(Material.PLANTS, Material.PLANTS.getColor()).properties(prop -> prop.doesNotBlockMovement().tickRandomly().hardnessAndResistance(0.0f).sound(SoundType.PLANT).notSolid())
+                .item().model((ctx, provider) -> provider.generated(ctx::getEntry, ColorMod.getLocation("block/color_sapling"))).tag(ItemTags.SAPLINGS).build().register();
+    }
+
+    private static RegistryEntry<ColorLeavesBlock> registerLeaves(String id, DyeColor color, Supplier<ColorSaplingBlock> sapling) {
+        return REGISTRATE.object(id).block(prop -> new ColorLeavesBlock(color, prop))
+                .blockstate((ctx, provider) -> provider.simpleBlock(ctx.getEntry(), provider.models().getExistingFile(ColorMod.getLocation("block/color_leaves"))))
+                .loot((lootTables, block) ->
+                        lootTables.registerLootTable(block, LootTable.builder()
+                                .addLootPool(LootPool.builder()
+                                        .rolls(new RandomValueRange(1))
+                                        .addEntry(AlternativesLootEntry.builder(ItemLootEntry.builder(block)
+                                                .acceptCondition(Alternative.builder(MatchTool.builder(ItemPredicate.Builder.create().item(Items.SHEARS)))
+                                                        .alternative(MatchTool.builder(ItemPredicate.Builder.create().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1))))))))
+                                        .addEntry(ItemLootEntry.builder(sapling.get())
+                                                .acceptCondition(SurvivesExplosion.builder())
+                                                .acceptCondition(TableBonus.builder(Enchantments.FORTUNE, 0.05f, 0.0625f, 0.083333336f, 0.1f)))
+                                ).addLootPool(LootPool.builder()
+                                        .rolls(new RandomValueRange(1))
+                                        .addEntry(ItemLootEntry.builder(Items.STICK)
+                                                .acceptCondition(TableBonus.builder(Enchantments.FORTUNE, 0.02f, 0.022222223f, 0.025f, 0.033333335f, 0.1f))
+                                                .acceptFunction(SetCount.builder(new RandomValueRange(1.0f, 2.0f))).acceptFunction(ExplosionDecay.builder()))
+                                        .acceptCondition(Inverted.builder(Alternative.builder(MatchTool.builder(ItemPredicate.Builder.create().item(Items.SHEARS)))
+                                                .alternative(MatchTool.builder(ItemPredicate.Builder.create().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1)))))))))
+                ).defaultLang()
+                .tag(BlockTags.LEAVES).initialProperties(Material.LEAVES, MaterialColor.WOOD).properties(prop -> prop.hardnessAndResistance(0.2F).tickRandomly().sound(SoundType.PLANT).notSolid())
+                .item().model((ctx, provider) -> provider.withExistingParent(ctx.getName(), ColorMod.getLocation("block/color_leaves"))).tag(ItemTags.LEAVES).build().register();
     }
 
     private static RegistryEntry<ColorPlanksBlock> registerPlanks(String id, DyeColor color, Tag<Item> logTag) {

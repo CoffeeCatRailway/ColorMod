@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "coffeecolor:white_sapling",
+    "coffeecolor:orange_sapling",
+    "coffeecolor:magenta_sapling",
+    "coffeecolor:light_blue_sapling",
+    "coffeecolor:yellow_sapling",
+    "coffeecolor:lime_sapling",
+    "coffeecolor:pink_sapling",
+    "coffeecolor:gray_sapling",
+    "coffeecolor:light_gray_sapling",
+    "coffeecolor:cyan_sapling",
+    "coffeecolor:purple_sapling",
+    "coffeecolor:blue_sapling",
+    "coffeecolor:brown_sapling",
+    "coffeecolor:green_sapling",
+    "coffeecolor:red_sapling",
+    "coffeecolor:black_sapling"
+  ]
+}

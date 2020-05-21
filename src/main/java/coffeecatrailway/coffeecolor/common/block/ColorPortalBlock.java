@@ -1,10 +1,11 @@
 package coffeecatrailway.coffeecolor.common.block;
 
+import coffeecatrailway.coffeecolor.common.dimension.ColorGenSettings;
 import coffeecatrailway.coffeecolor.common.dimension.ColorTeleporter;
 import coffeecatrailway.coffeecolor.common.tileentity.ColorPortalTileEntity;
 import coffeecatrailway.coffeecolor.registry.ColorBiomes;
 import coffeecatrailway.coffeecolor.registry.ColorBlocks;
-import coffeecatrailway.coffeecolor.registry.ColorTileEntities;
+import coffeecatrailway.coffeecolor.registry.ColorTags;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -16,7 +17,6 @@ import net.minecraft.server.management.PlayerList;
 import net.minecraft.state.EnumProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Rotation;
@@ -301,7 +301,7 @@ public class ColorPortalBlock extends ContainerBlock {
             }
 
             BlockPos blockpos = pos;
-            while (pos.getY() > blockpos.getY() - 21 && pos.getY() > 0 && isEmptyBlock(world.getBlockState(pos.down())))
+            while (pos.getY() > ColorGenSettings.SEA_LEVEL && pos.getY() > blockpos.getY() - 21 && pos.getY() > 0 && isEmptyBlock(world.getBlockState(pos.down())))
                 pos = pos.down();
 
             int i = getDistanceUntilEdge(pos, leftDir) - 1;
@@ -388,7 +388,7 @@ public class ColorPortalBlock extends ContainerBlock {
         }
 
         private boolean isFrameBlock(BlockState state) {
-            return BlockTags.WOOL.contains(state.getBlock());
+            return ColorTags.Blocks.COLOR_PORTAL_FRAME.contains(state.getBlock());
         }
 
         public boolean isValid() {

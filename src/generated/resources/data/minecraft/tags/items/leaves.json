@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "coffeecolor:white_leaves",
+    "coffeecolor:orange_leaves",
+    "coffeecolor:magenta_leaves",
+    "coffeecolor:light_blue_leaves",
+    "coffeecolor:yellow_leaves",
+    "coffeecolor:lime_leaves",
+    "coffeecolor:pink_leaves",
+    "coffeecolor:gray_leaves",
+    "coffeecolor:light_gray_leaves",
+    "coffeecolor:cyan_leaves",
+    "coffeecolor:purple_leaves",
+    "coffeecolor:blue_leaves",
+    "coffeecolor:brown_leaves",
+    "coffeecolor:green_leaves",
+    "coffeecolor:red_leaves",
+    "coffeecolor:black_leaves"
+  ]
+}
