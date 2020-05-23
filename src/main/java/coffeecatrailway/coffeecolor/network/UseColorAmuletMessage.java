@@ -1,7 +1,7 @@
 package coffeecatrailway.coffeecolor.network;
 
 import coffeecatrailway.coffeecolor.common.item.ColorAmuletItem;
-import coffeecatrailway.coffeecolor.curios.CuriosIntegration;
+import coffeecatrailway.coffeecolor.integration.CuriosIntegration;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketBuffer;

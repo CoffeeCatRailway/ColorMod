@@ -2,7 +2,7 @@ package coffeecatrailway.coffeecolor.common.item;
 
 import coffeecatrailway.coffeecolor.ColorMod;
 import coffeecatrailway.coffeecolor.common.IHasColor;
-import coffeecatrailway.coffeecolor.curios.CuriosIntegration;
+import coffeecatrailway.coffeecolor.integration.CuriosIntegration;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.LivingEntity;
@@ -56,7 +56,7 @@ public class ColorAmuletItem extends Item implements IHasColor {
 
     @Override
     public void fillItemGroup(ItemGroup group, NonNullList<ItemStack> stacks) {
-        if (group == ColorMod.GROUP) {
+        if (this.isInGroup(group)) {
             for (DyeColor color : DyeColor.values()) {
                 ItemStack stack = new ItemStack(this);
                 stack.getOrCreateTag().putByte(TAG_COLOR, (byte) (color.getId() & 15));

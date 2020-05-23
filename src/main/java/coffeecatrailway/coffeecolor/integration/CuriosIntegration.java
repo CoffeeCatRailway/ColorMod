@@ -1,4 +1,4 @@
-package coffeecatrailway.coffeecolor.curios;
+package coffeecatrailway.coffeecolor.integration;
 
 import coffeecatrailway.coffeecolor.ColorMod;
 import coffeecatrailway.coffeecolor.client.model.ColorAmuletModel;

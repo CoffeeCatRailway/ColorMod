@@ -1,8 +1,7 @@
 package coffeecatrailway.coffeecolor;
 
 import coffeecatrailway.coffeecolor.common.biome.ColorBiome;
-import coffeecatrailway.coffeecolor.common.item.ColorAmuletItem;
-import coffeecatrailway.coffeecolor.curios.CuriosIntegration;
+import coffeecatrailway.coffeecolor.integration.CuriosIntegration;
 import coffeecatrailway.coffeecolor.network.PacketHandler;
 import coffeecatrailway.coffeecolor.registrate.ColorLang;
 import coffeecatrailway.coffeecolor.registrate.ColorModels;
@@ -13,7 +12,6 @@ import com.tterrag.registrate.providers.ProviderType;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.SheepEntity;
-import net.minecraft.item.DyeColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
@@ -33,8 +31,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.glfw.GLFW;
-
-import java.util.function.Supplier;
 
 @Mod(ColorMod.MOD_ID)
 @Mod.EventBusSubscriber(modid = ColorMod.MOD_ID)
@@ -58,6 +54,7 @@ public class ColorMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::setupClient);
         modEventBus.addListener(this::setupCommon);
+        CuriosIntegration.init();
         MinecraftForge.EVENT_BUS.register(this);
 
         REGISTRATE = ColorRegistrate.create(MOD_ID, modEventBus);
@@ -97,7 +94,6 @@ public class ColorMod {
         ColorBiomes.addBiomeTypes();
         ColorBiomes.addBiomeFeatures();
         PacketHandler.init();
-        CuriosIntegration.init();
     }
 
     @SubscribeEvent
