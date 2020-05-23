@@ -145,7 +145,7 @@ public class ColorAmuletItem extends Item implements IHasColor {
         }
     }
 
-    private AmuletEffect getEffectByColor(DyeColor color) {
+    public static AmuletEffect getEffectByColor(DyeColor color) {
         switch (color) {
             default:
             case WHITE:
@@ -163,17 +163,17 @@ public class ColorAmuletItem extends Item implements IHasColor {
             case PINK:
                 return new AmuletEffect(new EffectInstance(Effects.REGENERATION, 10, 1), 30);
             case GRAY:
-                return new AmuletEffect(new EffectInstance(Effects.INSTANT_DAMAGE, 10), 30, LivingEntity.class, "Monsters", 4);
+                return new AmuletEffect(new EffectInstance(Effects.INSTANT_DAMAGE, 10), 30, LivingEntity.class, "Monsters & Animals", 4);
             case LIGHT_GRAY:
-                return new AmuletEffect(new EffectInstance(Effects.POISON, 30), 30, LivingEntity.class, "Monsters", 4);
+                return new AmuletEffect(new EffectInstance(Effects.POISON, 30), 30, LivingEntity.class, "Monsters & Animals", 4);
             case CYAN:
                 return new AmuletEffect(new EffectInstance(Effects.WATER_BREATHING, 60), 60);
             case PURPLE:
                 return new AmuletEffect(new EffectInstance(Effects.INSTANT_HEALTH, 5), 60);
             case BLUE:
-                return new AmuletEffect(new EffectInstance(Effects.SLOWNESS, 30, 2), 60, LivingEntity.class, "Monsters", 4);
+                return new AmuletEffect(new EffectInstance(Effects.SLOWNESS, 30, 2), 60, LivingEntity.class, "Monsters & Animals", 4);
             case BROWN:
-                return new AmuletEffect(new EffectInstance(Effects.WEAKNESS, 30, 1), 60, LivingEntity.class, "Monsters", 4);
+                return new AmuletEffect(new EffectInstance(Effects.WEAKNESS, 30, 1), 60, LivingEntity.class, "Monsters & Animals", 4);
             case GREEN:
                 return new AmuletEffect(new EffectInstance(Effects.LUCK, 10), true);
             case RED:
@@ -187,15 +187,15 @@ public class ColorAmuletItem extends Item implements IHasColor {
         this.activated = true;
     }
 
-    static class AmuletEffect {
+    public static class AmuletEffect {
 
-        protected EffectInstance effect;
+        public EffectInstance effect;
         protected int cooldown;
         protected boolean persistent;
 
         protected Class<? extends LivingEntity> entityEffected;
         protected int radius;
-        public String effectedName;
+        protected String effectedName;
 
         public AmuletEffect(EffectInstance effect, int cooldown) {
             this(effect, cooldown, false);

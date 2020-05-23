@@ -5,11 +5,10 @@ import coffeecatrailway.coffeecolor.common.block.ColorPortalBlock;
 import coffeecatrailway.coffeecolor.common.tileentity.ColorPortalTileEntity;
 import com.google.common.collect.ImmutableList;
 import com.mojang.blaze3d.matrix.MatrixStack;
+import com.mojang.blaze3d.platform.GlStateManager;
+import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
-import net.minecraft.client.renderer.IRenderTypeBuffer;
-import net.minecraft.client.renderer.Matrix4f;
-import net.minecraft.client.renderer.RenderState;
-import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.*;
 import net.minecraft.client.renderer.tileentity.TileEntityRenderer;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
@@ -28,6 +27,27 @@ import java.util.stream.IntStream;
  */
 @OnlyIn(Dist.CLIENT)
 public class ColorPortalTileEntityRenderer extends TileEntityRenderer<ColorPortalTileEntity> {
+
+    public static RenderState.FogState COLOR_FOG = new RenderState.FogState("color_fog", () -> {
+        RenderSystem.fog(2918, 0.0F, 1.0F, 0.0F, 1.0F);
+        RenderSystem.enableFog();
+    }, () -> {
+        FogRenderer.applyFog();
+        RenderSystem.disableFog();
+    });
+    public static RenderState.TransparencyState TRANSLUCENT_TRANSPARENCY = new RenderState.TransparencyState("translucent_transparency", () -> {
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+    }, () -> {
+        RenderSystem.disableBlend();
+    });
+    public static RenderState.TransparencyState ADDITIVE_TRANSPARENCY = new RenderState.TransparencyState("additive_transparency", () -> {
+        RenderSystem.enableBlend();
+        RenderSystem.blendFunc(GlStateManager.SourceFactor.ONE, GlStateManager.DestFactor.ONE);
+    }, () -> {
+        RenderSystem.disableBlend();
+        RenderSystem.defaultBlendFunc();
+    });
 
     public static final ResourceLocation COLOR_SKY_TEXTURE = ColorMod.getLocation("textures/environment/color_sky.png");
     public static final ResourceLocation COLOR_PORTAL_TEXTURE = ColorMod.getLocation("textures/entity/color_portal.png");
@@ -95,13 +115,13 @@ public class ColorPortalTileEntityRenderer extends TileEntityRenderer<ColorPorta
         RenderState.TransparencyState transparencyState;
         RenderState.TextureState textureState;
         if (iteration <= 1) {
-            transparencyState = RenderState.TRANSLUCENT_TRANSPARENCY;
+            transparencyState = TRANSLUCENT_TRANSPARENCY;
             textureState = new RenderState.TextureState(COLOR_SKY_TEXTURE, false, false);
         } else {
-            transparencyState = RenderState.ADDITIVE_TRANSPARENCY;
+            transparencyState = ADDITIVE_TRANSPARENCY;
             textureState = new RenderState.TextureState(COLOR_PORTAL_TEXTURE, false, false);
         }
 
-        return RenderType.makeType("color_portal", DefaultVertexFormats.POSITION_COLOR, 7, 256, false, true, RenderType.State.getBuilder().transparency(transparencyState).texture(textureState).texturing(new RenderState.PortalTexturingState(iteration)).fog(RenderState.BLACK_FOG).build(false));
+        return RenderType.makeType("color_portal", DefaultVertexFormats.POSITION_COLOR, 7, 256, false, true, RenderType.State.getBuilder().transparency(transparencyState).texture(textureState).texturing(new RenderState.PortalTexturingState(iteration)).fog(COLOR_FOG).build(false));
     }
 }

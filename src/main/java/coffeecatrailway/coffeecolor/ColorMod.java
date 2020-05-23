@@ -1,6 +1,7 @@
 package coffeecatrailway.coffeecolor;
 
 import coffeecatrailway.coffeecolor.common.biome.ColorBiome;
+import coffeecatrailway.coffeecolor.common.item.ColorAmuletItem;
 import coffeecatrailway.coffeecolor.integration.CuriosIntegration;
 import coffeecatrailway.coffeecolor.network.PacketHandler;
 import coffeecatrailway.coffeecolor.registrate.ColorLang;
@@ -12,8 +13,10 @@ import com.tterrag.registrate.providers.ProviderType;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.SheepEntity;
+import net.minecraft.item.DyeColor;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.EffectInstance;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.api.distmarker.Dist;
@@ -104,10 +107,15 @@ public class ColorMod {
     @SubscribeEvent
     public static void onEntitySpawn(EntityJoinWorldEvent event) {
         Entity entity = event.getEntity();
-        if (entity instanceof SheepEntity) {
+        if (entity instanceof SheepEntity && !entity.world.isRemote) {
             Biome biome = event.getWorld().getBiome(entity.getPosition());
-            if (biome instanceof ColorBiome)
-                ((SheepEntity) entity).setFleeceColor(((ColorBiome) biome).getColor());
+            if (biome instanceof ColorBiome) {
+                SheepEntity sheep = ((SheepEntity) entity);
+                    DyeColor color = ((ColorBiome) biome).getColor();
+                    sheep.setFleeceColor(color);
+                    ColorAmuletItem.AmuletEffect effect = ColorAmuletItem.getEffectByColor(color);
+                    sheep.addPotionEffect(new EffectInstance(effect.effect.getPotion(), 1000000, effect.effect.getAmplifier(), false, false));
+            }
         }
     }
 
