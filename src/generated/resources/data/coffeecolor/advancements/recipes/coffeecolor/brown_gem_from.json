@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "coffeecolor:brown_gem_from"
+    ]
+  },
+  "criteria": {
+    "has_brown_gem_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "coffeecolor:brown_gem_ore"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "coffeecolor:brown_gem_from"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_brown_gem_ore",
+      "has_the_recipe"
+    ]
+  ]
+}

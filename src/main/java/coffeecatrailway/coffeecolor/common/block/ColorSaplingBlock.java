@@ -1,11 +1,13 @@
 package coffeecatrailway.coffeecolor.common.block;
 
+import coffeecatrailway.coffeecolor.common.IHasColor;
 import coffeecatrailway.coffeecolor.common.biome.feature.tree.ColorTree;
 import coffeecatrailway.coffeecolor.registry.ColorBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SaplingBlock;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.DyeColor;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
@@ -33,8 +35,8 @@ public class ColorSaplingBlock extends SaplingBlock implements IHasColor {
     }
 
     @Override
-    public DyeColor getColor() {
-        return this.color;
+    public int getColor(ItemStack stack, int tintindex) {
+        return this.color.getColorValue();
     }
 
     @Override

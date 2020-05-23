@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "coffeecolor:black_gem_from_black_gem_ore_smelting"
+    ]
+  },
+  "criteria": {
+    "has_black_gem_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "coffeecolor:black_gem_ore"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "coffeecolor:black_gem_from_black_gem_ore_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_black_gem_ore",
+      "has_the_recipe"
+    ]
+  ]
+}

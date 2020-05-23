@@ -1,9 +1,11 @@
 package coffeecatrailway.coffeecolor.common.block;
 
+import coffeecatrailway.coffeecolor.common.IHasColor;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.LeavesBlock;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.DyeColor;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 
@@ -21,8 +23,8 @@ public class ColorLeavesBlock extends LeavesBlock implements IHasColor {
     }
 
     @Override
-    public DyeColor getColor() {
-        return this.color;
+    public int getColor(ItemStack stack, int tintindex) {
+        return this.color.getColorValue();
     }
 
     @Override

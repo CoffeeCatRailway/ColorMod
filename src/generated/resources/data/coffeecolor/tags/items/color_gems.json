@@ -1,0 +1,21 @@
+{
+  "replace": false,
+  "values": [
+    "coffeecolor:white_gem",
+    "coffeecolor:orange_gem",
+    "coffeecolor:magenta_gem",
+    "coffeecolor:light_blue_gem",
+    "coffeecolor:yellow_gem",
+    "coffeecolor:lime_gem",
+    "coffeecolor:pink_gem",
+    "coffeecolor:gray_gem",
+    "coffeecolor:light_gray_gem",
+    "coffeecolor:cyan_gem",
+    "coffeecolor:purple_gem",
+    "coffeecolor:blue_gem",
+    "coffeecolor:brown_gem",
+    "coffeecolor:green_gem",
+    "coffeecolor:red_gem",
+    "coffeecolor:black_gem"
+  ]
+}

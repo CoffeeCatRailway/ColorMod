@@ -88,6 +88,10 @@ repositories {
     jcenter()
     mavenLocal()
 
+    maven { // Curios
+        url = "https://maven.theillusivec4.top/"
+    }
+
     maven { // Registrate
         name 'tterrag maven'
         url "https://maven.tterrag.com/"
@@ -100,6 +104,9 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${project.mcVersion}-${project.forgeVersion}"
+
+    runtimeOnly fg.deobf("top.theillusivec4.curios:curios:FORGE-${project.mcVersion}-${project.curiosVersion}")
+    compileOnly fg.deobf("top.theillusivec4.curios:curios:FORGE-${project.mcVersion}-${project.curiosVersion}:api")
 
     def registrate = "com.tterrag.registrate:Registrate:MC${project.mcVersion}-${project.registrateVersion}"
     implementation fg.deobf(registrate)

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "coffeecolor:light_gray_gem_ore"
+  },
+  "result": "coffeecolor:light_gray_gem",
+  "experience": 1.0,
+  "cookingtime": 200
+}

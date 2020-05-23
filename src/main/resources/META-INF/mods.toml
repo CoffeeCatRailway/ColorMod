@@ -24,3 +24,9 @@ Tis a color mod.
     versionRange="[1.15.2]"
     ordering="NONE"
     side="BOTH"
+[[dependencies.coffeecolor]]
+    modId="curios"
+    mandatory=true
+    versionRange="[FORGE-1.15.2-2,]"
+    ordering="NONE"
+    side="BOTH"

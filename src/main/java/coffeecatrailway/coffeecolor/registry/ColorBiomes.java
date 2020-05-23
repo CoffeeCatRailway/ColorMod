@@ -271,5 +271,6 @@ public class ColorBiomes {
     }
 
     public static void load() {
+        ColorMod.LOGGER.info("Register biomes");
     }
 }

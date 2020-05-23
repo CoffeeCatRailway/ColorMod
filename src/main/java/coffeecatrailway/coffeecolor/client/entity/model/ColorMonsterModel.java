@@ -1,6 +1,6 @@
 package coffeecatrailway.coffeecolor.client.entity.model;
 
-import coffeecatrailway.coffeecolor.common.ColorMonsterEntity;
+import coffeecatrailway.coffeecolor.common.entity.ColorMonsterEntity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.BipedModel;

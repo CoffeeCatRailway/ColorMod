@@ -5,7 +5,7 @@ import coffeecatrailway.coffeecolor.common.dimension.ColorTeleporter;
 import coffeecatrailway.coffeecolor.common.tileentity.ColorPortalTileEntity;
 import coffeecatrailway.coffeecolor.registry.ColorBiomes;
 import coffeecatrailway.coffeecolor.registry.ColorBlocks;
-import coffeecatrailway.coffeecolor.registry.ColorTags;
+import coffeecatrailway.coffeecolor.registrate.ColorTags;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;

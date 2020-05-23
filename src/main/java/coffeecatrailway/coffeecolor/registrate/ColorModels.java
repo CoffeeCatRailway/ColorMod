@@ -79,5 +79,16 @@ public class ColorModels implements NonNullConsumer<RegistrateBlockstateProvider
         ModelBuilder<BlockModelBuilder> tall_grass_top = provider.models().withExistingParent("color_tall_grass_top", color_cross)
                 .texture("cross", ColorMod.getLocation("block/color_tall_grass_top"));
         tall_grass_top.assertExistence();
+
+        ResourceLocation colorOreTexture = ColorMod.getLocation("block/color_ore");
+        ResourceLocation colorOreOverlayTexture = ColorMod.getLocation("block/color_ore_overlay");
+        ModelBuilder<BlockModelBuilder> colorOre = provider.models().withExistingParent("color_ore", ColorMod.getLocation("block/color_log"))
+                .texture("side", colorOreOverlayTexture)
+                .texture("end", colorOreOverlayTexture)
+                .texture("side_overlay", colorOreTexture)
+                .texture("end_overlay", colorOreTexture);
+        colorOre.assertExistence();
+
+        ColorMod.LOGGER.info("DataGen: Block models");
     }
 }

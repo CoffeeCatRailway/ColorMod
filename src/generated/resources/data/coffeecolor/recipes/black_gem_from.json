@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "coffeecolor:black_gem_ore"
+  },
+  "result": "coffeecolor:black_gem",
+  "experience": 1.0,
+  "cookingtime": 100
+}

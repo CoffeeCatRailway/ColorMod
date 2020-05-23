@@ -1,5 +1,6 @@
 package coffeecatrailway.coffeecolor.common.biome;
 
+import coffeecatrailway.coffeecolor.registry.ColorBlocks;
 import coffeecatrailway.coffeecolor.registry.ColorFeatures;
 import net.minecraft.item.DyeColor;
 
@@ -18,5 +19,6 @@ public class PurpleBiome extends ColorBiome {
         super.addFeatures();
         if (this.category == Category.FOREST)
             ColorFeatures.addColorTree(this, ColorFeatures.PURPLE_TREE.get().withConfiguration(ColorFeatures.getPurpleTreeConfig()), 8);
+        ColorFeatures.addColorGemOre(this, ColorBlocks.PURPLE_GEM_ORE);
     }
 }

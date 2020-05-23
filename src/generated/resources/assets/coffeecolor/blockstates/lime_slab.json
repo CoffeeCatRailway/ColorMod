@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=top": {
+      "model": "coffeecolor:block/color_slab_top"
+    },
+    "type=bottom": {
+      "model": "coffeecolor:block/color_slab"
+    },
+    "type=double": {
+      "model": "coffeecolor:block/color_planks"
+    }
+  }
+}

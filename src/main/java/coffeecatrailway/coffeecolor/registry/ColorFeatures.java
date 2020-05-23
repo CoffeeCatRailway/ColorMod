@@ -2,24 +2,24 @@ package coffeecatrailway.coffeecolor.registry;
 
 import coffeecatrailway.coffeecolor.ColorMod;
 import coffeecatrailway.coffeecolor.common.biome.feature.ColorTreeFeatureConfig;
+import coffeecatrailway.coffeecolor.common.biome.feature.Height4To255;
 import coffeecatrailway.coffeecolor.common.biome.feature.tree.ColorTreeFeature;
 import com.google.common.collect.ImmutableList;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.blockplacer.DoublePlantBlockPlacer;
 import net.minecraft.world.gen.blockplacer.SimpleBlockPlacer;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.blockstateprovider.WeightedBlockStateProvider;
-import net.minecraft.world.gen.feature.BlockClusterFeatureConfig;
-import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.Feature;
-import net.minecraft.world.gen.feature.MultipleRandomFeatureConfig;
-import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
-import net.minecraft.world.gen.placement.FrequencyConfig;
-import net.minecraft.world.gen.placement.Placement;
+import net.minecraft.world.gen.feature.*;
+import net.minecraft.world.gen.placement.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
+
+import java.util.function.Supplier;
 
 /**
  * @author CoffeeCatRailway
@@ -28,6 +28,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ColorFeatures {
 
     public static final DeferredRegister<Feature<?>> FEATURES = new DeferredRegister<>(ForgeRegistries.FEATURES, ColorMod.MOD_ID);
+    public static final DeferredRegister<Placement<?>> DECORATORS = new DeferredRegister<>(ForgeRegistries.DECORATORS, ColorMod.MOD_ID);
 
     public static final RegistryObject<Feature<ColorTreeFeatureConfig>> WHITE_TREE = FEATURES.register("white_feature", () -> new ColorTreeFeature(ColorTreeFeatureConfig::deserializeWhite));
     public static final RegistryObject<Feature<ColorTreeFeatureConfig>> ORANGE_TREE = FEATURES.register("orange_feature", () -> new ColorTreeFeature(ColorTreeFeatureConfig::deserializeOrange));
@@ -45,6 +46,9 @@ public class ColorFeatures {
     public static final RegistryObject<Feature<ColorTreeFeatureConfig>> GREEN_TREE = FEATURES.register("green_feature", () -> new ColorTreeFeature(ColorTreeFeatureConfig::deserializeGreen));
     public static final RegistryObject<Feature<ColorTreeFeatureConfig>> RED_TREE = FEATURES.register("red_feature", () -> new ColorTreeFeature(ColorTreeFeatureConfig::deserializeRed));
     public static final RegistryObject<Feature<ColorTreeFeatureConfig>> BLACK_TREE = FEATURES.register("black_feature", () -> new ColorTreeFeature(ColorTreeFeatureConfig::deserializeBlack));
+
+    public static final RegistryObject<Feature<ReplaceBlockConfig>> COLOR_GEM_ORE = FEATURES.register("color_gem_ore", () -> new ReplaceBlockFeature(ReplaceBlockConfig::deserialize));
+    public static final RegistryObject<Placement<NoPlacementConfig>> COLOR_GEM_ORE_PLACEMENT = DECORATORS.register("color_gem_ore", () -> new Height4To255(NoPlacementConfig::deserialize));
 
     public static ColorTreeFeatureConfig getWhiteTreeConfig() {
         return (new ColorTreeFeatureConfig.Builder(new SimpleBlockStateProvider(ColorBlocks.WHITE_LOG.get().getDefaultState()),
@@ -148,5 +152,9 @@ public class ColorFeatures {
 
     public static void addColorTallGrass(Biome biome, BlockClusterFeatureConfig config) {
         biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_PATCH.withConfiguration(config).withPlacement(Placement.COUNT_HEIGHTMAP_32.configure(new FrequencyConfig(7))));
+    }
+
+    public static void addColorGemOre(Biome biome, Supplier<? extends Block> ore) {
+        biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, ColorFeatures.COLOR_GEM_ORE.get().withConfiguration(new ReplaceBlockConfig(Blocks.STONE.getDefaultState(), ore.get().getDefaultState())).withPlacement(ColorFeatures.COLOR_GEM_ORE_PLACEMENT.get().configure(IPlacementConfig.NO_PLACEMENT_CONFIG)));
     }
 }

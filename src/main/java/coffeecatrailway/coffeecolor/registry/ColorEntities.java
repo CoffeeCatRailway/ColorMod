@@ -1,6 +1,7 @@
 package coffeecatrailway.coffeecolor.registry;
 
-import coffeecatrailway.coffeecolor.common.ColorMonsterEntity;
+import coffeecatrailway.coffeecolor.ColorMod;
+import coffeecatrailway.coffeecolor.common.entity.ColorMonsterEntity;
 import com.tterrag.registrate.util.LazySpawnEggItem;
 import com.tterrag.registrate.util.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
@@ -17,7 +18,6 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.gen.Heightmap;
 import net.minecraft.world.storage.loot.LootTable;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 
@@ -61,5 +61,6 @@ public class ColorEntities {
     }
 
     public static void load() {
+        ColorMod.LOGGER.info("Register entities");
     }
 }

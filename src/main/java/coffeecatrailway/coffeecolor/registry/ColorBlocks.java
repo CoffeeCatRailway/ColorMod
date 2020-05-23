@@ -3,7 +3,9 @@ package coffeecatrailway.coffeecolor.registry;
 import coffeecatrailway.coffeecolor.ColorMod;
 import coffeecatrailway.coffeecolor.common.biome.feature.tree.*;
 import coffeecatrailway.coffeecolor.common.block.*;
+import coffeecatrailway.coffeecolor.common.item.ColorGemItem;
 import coffeecatrailway.coffeecolor.registrate.ColorRegistrate;
+import coffeecatrailway.coffeecolor.registrate.ColorTags;
 import com.tterrag.registrate.builders.BlockBuilder;
 import com.tterrag.registrate.builders.ItemBuilder;
 import com.tterrag.registrate.providers.DataGenContext;
@@ -35,6 +37,7 @@ import net.minecraft.tags.Tag;
 import net.minecraft.util.Direction;
 import net.minecraft.world.storage.loot.*;
 import net.minecraft.world.storage.loot.conditions.*;
+import net.minecraft.world.storage.loot.functions.ApplyBonus;
 import net.minecraft.world.storage.loot.functions.ExplosionDecay;
 import net.minecraft.world.storage.loot.functions.SetCount;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -223,7 +226,42 @@ public class ColorBlocks {
     public static final RegistryEntry<ColorStairsBlock> RED_STAIRS = registerStairs("red_stairs", RED_PLANKS);
     public static final RegistryEntry<ColorStairsBlock> BLACK_STAIRS = registerStairs("black_stairs", BLACK_PLANKS);
 
+    public static final RegistryEntry<ColorSlabBlock> WHITE_SLAB = registerSlab("white_slab", WHITE_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> ORANGE_SLAB = registerSlab("orange_slab", ORANGE_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> MAGENTA_SLAB = registerSlab("magenta_slab", MAGENTA_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> LIGHT_BLUE_SLAB = registerSlab("light_blue_slab", LIGHT_BLUE_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> YELLOW_SLAB = registerSlab("yellow_slab", YELLOW_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> LIME_SLAB = registerSlab("lime_slab", LIME_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> PINK_SLAB = registerSlab("pink_slab", PINK_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> GRAY_SLAB = registerSlab("gray_slab", GRAY_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> LIGHT_GRAY_SLAB = registerSlab("light_gray_slab", LIGHT_GRAY_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> CYAN_SLAB = registerSlab("cyan_slab", CYAN_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> PURPLE_SLAB = registerSlab("purple_slab", PURPLE_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> BLUE_SLAB = registerSlab("blue_slab", BLUE_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> BROWN_SLAB = registerSlab("brown_slab", BROWN_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> GREEN_SLAB = registerSlab("green_slab", GREEN_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> RED_SLAB = registerSlab("red_slab", RED_PLANKS);
+    public static final RegistryEntry<ColorSlabBlock> BLACK_SLAB = registerSlab("black_slab", BLACK_PLANKS);
+
+    public static final RegistryEntry<ColorGemOreBlock> WHITE_GEM_ORE = registerGemOre("white_gem_ore", DyeColor.WHITE, () -> ColorItems.WHITE_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> ORANGE_GEM_ORE = registerGemOre("orange_gem_ore", DyeColor.ORANGE, () -> ColorItems.ORANGE_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> MAGENTA_GEM_ORE = registerGemOre("magenta_gem_ore", DyeColor.MAGENTA, () -> ColorItems.MAGENTA_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> LIGHT_BLUE_GEM_ORE = registerGemOre("light_blue_gem_ore", DyeColor.LIGHT_BLUE, () -> ColorItems.LIGHT_BLUE_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> YELLOW_GEM_ORE = registerGemOre("yellow_gem_ore", DyeColor.YELLOW, () -> ColorItems.YELLOW_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> LIME_GEM_ORE = registerGemOre("lime_gem_ore", DyeColor.LIME, () -> ColorItems.LIME_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> PINK_GEM_ORE = registerGemOre("pink_gem_ore", DyeColor.PINK, () -> ColorItems.PINK_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> GRAY_GEM_ORE = registerGemOre("gray_gem_ore", DyeColor.GRAY, () -> ColorItems.GRAY_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> LIGHT_GRAY_GEM_ORE = registerGemOre("light_gray_gem_ore", DyeColor.LIGHT_GRAY, () -> ColorItems.LIGHT_GRAY_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> CYAN_GEM_ORE = registerGemOre("cyan_gem_ore", DyeColor.CYAN, () -> ColorItems.CYAN_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> PURPLE_GEM_ORE = registerGemOre("purple_gem_ore", DyeColor.PURPLE, () -> ColorItems.PURPLE_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> BLUE_GEM_ORE = registerGemOre("blue_gem_ore", DyeColor.BLUE, () -> ColorItems.BLUE_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> BROWN_GEM_ORE = registerGemOre("brown_gem_ore", DyeColor.BROWN, () -> ColorItems.BROWN_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> GREEN_GEM_ORE = registerGemOre("green_gem_ore", DyeColor.GREEN, () -> ColorItems.GREEN_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> RED_GEM_ORE = registerGemOre("red_gem_ore", DyeColor.RED, () -> ColorItems.RED_GEM.get());
+    public static final RegistryEntry<ColorGemOreBlock> BLACK_GEM_ORE = registerGemOre("black_gem_ore", DyeColor.BLACK, () -> ColorItems.BLACK_GEM.get());
+
     public static void load() {
+        ColorMod.LOGGER.info("Register blocks");
     }
 
     private static RegistryEntry<ColorLogBlock> registerLog(String id, DyeColor color, Tag<Block> tag, boolean stripped, boolean bark, Supplier<ColorLogBlock> woodRecipeBlock) {
@@ -324,5 +362,30 @@ public class ColorBlocks {
                 ).defaultLoot().defaultLang().recipe((ctx, provider) -> provider.stairs(DataIngredient.items(planks.get()), ctx::getEntry, "wooden_stairs", false))
                 .initialProperties(Material.WOOD, MaterialColor.WOOD).properties(PLANKS_PROPS)
                 .item().model((ctx, provider) -> provider.withExistingParent(ctx.getName(), ColorMod.getLocation("block/color_stairs"))).build().register();
+    }
+
+    private static RegistryEntry<ColorSlabBlock> registerSlab(String id, Supplier<ColorPlanksBlock> planks) {
+        return REGISTRATE.object(id).block(prop -> new ColorSlabBlock(planks, prop))
+                .blockstate((ctx, provider) -> provider.slabBlock(ctx.getEntry(),
+                        provider.models().getExistingFile(ColorMod.getLocation("block/color_slab")),
+                        provider.models().getExistingFile(ColorMod.getLocation("block/color_slab_top")),
+                        provider.models().getExistingFile(ColorMod.getLocation("block/color_planks")))
+                ).defaultLoot().defaultLang().recipe((ctx, provider) -> provider.slab(DataIngredient.items(planks.get()), ctx::getEntry, "wooden_slab", false))
+                .initialProperties(Material.WOOD, MaterialColor.WOOD).properties(PLANKS_PROPS)
+                .item().model((ctx, provider) -> provider.withExistingParent(ctx.getName(), ColorMod.getLocation("block/color_slab"))).build().register();
+    }
+
+    private static RegistryEntry<ColorGemOreBlock> registerGemOre(String id, DyeColor color, Supplier<ColorGemItem> gem) {
+        return REGISTRATE.object(id).block(prop -> new ColorGemOreBlock(prop, color)).defaultLang()
+                .initialProperties(Material.ROCK, MaterialColor.STONE).properties(prop -> prop.hardnessAndResistance(3.0F, 3.0F))
+                .blockstate((ctx, provider) -> provider.simpleBlock(ctx.getEntry(), provider.models().getExistingFile(ColorMod.getLocation("block/color_ore"))))
+                .loot((lootTables, block) -> lootTables.registerLootTable(block, LootTable.builder()
+                        .addLootPool(LootPool.builder()
+                                .addEntry(AlternativesLootEntry.builder(ItemLootEntry.builder(block)
+                                        .acceptCondition(Alternative.builder(MatchTool.builder(ItemPredicate.Builder.create().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1))))))))
+                                .addEntry(ItemLootEntry.builder(gem.get())
+                                .acceptFunction(ApplyBonus.oreDrops(Enchantments.FORTUNE))
+                                .acceptFunction(ExplosionDecay.builder()))))
+                ).item().model((ctx, provider) -> provider.withExistingParent(ctx.getName(), ColorMod.getLocation("block/color_ore"))).build().register();
     }
 }

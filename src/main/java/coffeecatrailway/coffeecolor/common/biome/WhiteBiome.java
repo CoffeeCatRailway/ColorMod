@@ -1,5 +1,6 @@
 package coffeecatrailway.coffeecolor.common.biome;
 
+import coffeecatrailway.coffeecolor.registry.ColorBlocks;
 import coffeecatrailway.coffeecolor.registry.ColorFeatures;
 import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
@@ -21,5 +22,6 @@ public class WhiteBiome extends ColorBiome {
         super.addFeatures();
         if (this.category == Category.FOREST)
             ColorFeatures.addColorTree(this, ColorFeatures.WHITE_TREE.get().withConfiguration(ColorFeatures.getWhiteTreeConfig()), 8);
+        ColorFeatures.addColorGemOre(this, ColorBlocks.WHITE_GEM_ORE);
     }
 }

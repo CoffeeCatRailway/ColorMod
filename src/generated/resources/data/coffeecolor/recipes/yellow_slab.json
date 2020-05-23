@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wooden_slab",
+  "pattern": [
+    "XXX"
+  ],
+  "key": {
+    "X": {
+      "item": "coffeecolor:yellow_planks"
+    }
+  },
+  "result": {
+    "item": "coffeecolor:yellow_slab",
+    "count": 6
+  }
+}

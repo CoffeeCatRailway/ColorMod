@@ -1,0 +1,7 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "coffeecolor:item/color_amulet_chain",
+    "layer1": "coffeecolor:item/color_amulet_gem"
+  }
+}

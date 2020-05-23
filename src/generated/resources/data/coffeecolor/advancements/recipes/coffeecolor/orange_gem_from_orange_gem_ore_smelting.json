@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "coffeecolor:orange_gem_from_orange_gem_ore_smelting"
+    ]
+  },
+  "criteria": {
+    "has_orange_gem_ore": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "coffeecolor:orange_gem_ore"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "coffeecolor:orange_gem_from_orange_gem_ore_smelting"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_orange_gem_ore",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,7 +1,9 @@
 package coffeecatrailway.coffeecolor.common.block;
 
+import coffeecatrailway.coffeecolor.common.IHasColor;
 import net.minecraft.block.LogBlock;
 import net.minecraft.item.DyeColor;
+import net.minecraft.item.ItemStack;
 
 /**
  * @author CoffeeCatRailway
@@ -17,7 +19,7 @@ public class ColorLogBlock extends LogBlock implements IHasColor {
     }
 
     @Override
-    public DyeColor getColor() {
-        return this.color;
+    public int getColor(ItemStack stack, int tintindex) {
+        return this.color.getColorValue();
     }
 }
