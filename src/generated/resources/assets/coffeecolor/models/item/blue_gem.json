@@ -1,7 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "coffeecolor:item/color_gem",
-    "layer1": "coffeecolor:item/color_gem_overlay"
+    "layer0": "coffeecolor:item/color_gem"
   }
 }

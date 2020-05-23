@@ -20,6 +20,6 @@ public class ColorGemItem extends Item implements IHasColor {
 
     @Override
     public int getColor(ItemStack stack, int tintindex) {
-        return tintindex == 0 ? color.getColorValue() : -1;
+        return color.getColorValue();
     }
 }

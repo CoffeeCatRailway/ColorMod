@@ -61,6 +61,6 @@ public class ColorItems {
                 .recipe((ctx, provider) -> {
                     provider.blasting(DataIngredient.items(ore.get()), ctx::getEntry, 1.0f);
                     provider.cooking(DataIngredient.items(ore.get()), ctx::getEntry, 1.0f, 200, IRecipeSerializer.SMELTING);
-                }).model((ctx, provider) -> provider.generated(ctx::getEntry, ColorMod.getLocation("item/color_gem"), ColorMod.getLocation("item/color_gem_overlay"))).register();
+                }).model((ctx, provider) -> provider.generated(ctx::getEntry, ColorMod.getLocation("item/color_gem"))).register();
     }
 }
