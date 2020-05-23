@@ -91,6 +91,9 @@ repositories {
     maven { // Curios
         url = "https://maven.theillusivec4.top/"
     }
+    maven { // JustEnoughItems
+        url = "https://dvs1.progwml6.com/files/maven/"
+    }
 
     maven { // Registrate
         name 'tterrag maven'
@@ -107,6 +110,9 @@ dependencies {
 
     runtimeOnly fg.deobf("top.theillusivec4.curios:curios:FORGE-${project.mcVersion}-${project.curiosVersion}")
     compileOnly fg.deobf("top.theillusivec4.curios:curios:FORGE-${project.mcVersion}-${project.curiosVersion}:api")
+
+    runtimeOnly fg.deobf("mezz.jei:jei-${project.mcVersion}:${project.jeiVersion}")
+    compileOnly fg.deobf("mezz.jei:jei-${project.mcVersion}:${project.jeiVersion}:api")
 
     def registrate = "com.tterrag.registrate:Registrate:MC${project.mcVersion}-${project.registrateVersion}"
     implementation fg.deobf(registrate)
