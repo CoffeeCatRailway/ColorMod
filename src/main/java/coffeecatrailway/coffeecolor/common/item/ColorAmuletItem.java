@@ -5,6 +5,7 @@ import coffeecatrailway.coffeecolor.common.IHasColor;
 import coffeecatrailway.coffeecolor.integration.CuriosIntegration;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.DyeColor;
@@ -113,6 +114,13 @@ public class ColorAmuletItem extends Item implements IHasColor {
 
             if (this.activated) this.activated = false;
         }
+    }
+
+    @Override
+    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
+        super.inventoryTick(stack, world, entity, slot, selected);
+        if (entity instanceof PlayerEntity)
+            this.hasEffect = ((PlayerEntity) entity).getCooldownTracker().hasCooldown(this);
     }
 
     @Override
