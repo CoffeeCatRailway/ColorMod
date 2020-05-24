@@ -376,7 +376,7 @@ public class ColorBlocks {
     }
 
     private static RegistryEntry<ColorGemOreBlock> registerGemOre(String id, DyeColor color, Supplier<ColorGemItem> gem) {
-        return REGISTRATE.object(id).block(prop -> new ColorGemOreBlock(prop, color)).defaultLang()
+        return REGISTRATE.object(id).block(prop -> new ColorGemOreBlock(prop, color)).defaultLang().tag(Tags.Blocks.ORES)
                 .initialProperties(Material.ROCK, MaterialColor.STONE).properties(prop -> prop.hardnessAndResistance(3.0F, 3.0F))
                 .blockstate((ctx, provider) -> provider.simpleBlock(ctx.getEntry(), provider.models().getExistingFile(ColorMod.getLocation("block/color_ore"))))
                 .loot((lootTables, block) -> lootTables.registerLootTable(block, LootTable.builder()
