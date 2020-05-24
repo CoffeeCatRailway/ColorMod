@@ -42,7 +42,7 @@ public class ColorBiomes {
     public static final float FOREST_HILLS_DOWNFALL = 0.4f;
 
     public static final float RIVER_DEPTH = -1.5f;
-    
+
     // WHITE
     public static final RegistryEntry<WhiteBiome> WHITE_PLAINS = REGISTRATE.biome("white_plains", WhiteBiome::new)
             .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)

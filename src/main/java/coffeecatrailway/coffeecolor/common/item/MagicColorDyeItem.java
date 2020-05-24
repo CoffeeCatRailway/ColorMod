@@ -1,7 +1,7 @@
 package coffeecatrailway.coffeecolor.common.item;
 
-import coffeecatrailway.coffeecolor.registry.ColorBlocks;
 import coffeecatrailway.coffeecolor.registrate.ColorTags;
+import coffeecatrailway.coffeecolor.registry.ColorBlocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUseContext;

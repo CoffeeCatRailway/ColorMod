@@ -3,7 +3,6 @@ package coffeecatrailway.coffeecolor.registrate;
 import coffeecatrailway.coffeecolor.ColorMod;
 import com.tterrag.registrate.providers.RegistrateLangProvider;
 import com.tterrag.registrate.util.nullness.NonNullConsumer;
-import net.minecraft.client.settings.KeyBinding;
 
 /**
  * @author CoffeeCatRailway

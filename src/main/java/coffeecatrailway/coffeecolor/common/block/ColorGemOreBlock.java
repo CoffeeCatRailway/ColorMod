@@ -1,7 +1,6 @@
 package coffeecatrailway.coffeecolor.common.block;
 
 import coffeecatrailway.coffeecolor.common.IHasColor;
-import net.minecraft.block.Block;
 import net.minecraft.block.OreBlock;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.ItemStack;

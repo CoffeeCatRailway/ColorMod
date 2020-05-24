@@ -384,8 +384,8 @@ public class ColorBlocks {
                                 .addEntry(AlternativesLootEntry.builder(ItemLootEntry.builder(block)
                                         .acceptCondition(Alternative.builder(MatchTool.builder(ItemPredicate.Builder.create().enchantment(new EnchantmentPredicate(Enchantments.SILK_TOUCH, MinMaxBounds.IntBound.atLeast(1))))))))
                                 .addEntry(ItemLootEntry.builder(gem.get())
-                                .acceptFunction(ApplyBonus.oreDrops(Enchantments.FORTUNE))
-                                .acceptFunction(ExplosionDecay.builder()))))
+                                        .acceptFunction(ApplyBonus.oreDrops(Enchantments.FORTUNE))
+                                        .acceptFunction(ExplosionDecay.builder()))))
                 ).item().model((ctx, provider) -> provider.withExistingParent(ctx.getName(), ColorMod.getLocation("block/color_ore"))).build().register();
     }
 }

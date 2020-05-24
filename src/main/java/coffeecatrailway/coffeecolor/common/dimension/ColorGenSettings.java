@@ -18,7 +18,7 @@ public class ColorGenSettings extends GenerationSettings {
         genSettings.setDefaultFluid(Fluids.WATER.getDefaultState().getBlockState());
         return genSettings;
     }
-    
+
     @Override
     public int getBedrockFloorHeight() {
         return 0;

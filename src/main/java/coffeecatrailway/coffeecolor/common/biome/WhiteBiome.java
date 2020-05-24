@@ -2,10 +2,7 @@ package coffeecatrailway.coffeecolor.common.biome;
 
 import coffeecatrailway.coffeecolor.registry.ColorBlocks;
 import coffeecatrailway.coffeecolor.registry.ColorFeatures;
-import net.minecraft.entity.EntityClassification;
-import net.minecraft.entity.EntityType;
 import net.minecraft.item.DyeColor;
-import net.minecraft.world.biome.Biome;
 
 /**
  * @author CoffeeCatRailway

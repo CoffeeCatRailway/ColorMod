@@ -1,7 +1,7 @@
 package coffeecatrailway.coffeecolor.common.dimension;
 
-import coffeecatrailway.coffeecolor.registry.ColorBlocks;
 import coffeecatrailway.coffeecolor.registrate.ColorTags;
+import coffeecatrailway.coffeecolor.registry.ColorBlocks;
 import com.google.common.collect.Maps;
 import it.unimi.dsi.fastutil.objects.Object2LongMap;
 import it.unimi.dsi.fastutil.objects.Object2LongOpenHashMap;

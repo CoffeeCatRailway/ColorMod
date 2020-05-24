@@ -111,10 +111,10 @@ public class ColorMod {
             Biome biome = event.getWorld().getBiome(entity.getPosition());
             if (biome instanceof ColorBiome) {
                 SheepEntity sheep = ((SheepEntity) entity);
-                    DyeColor color = ((ColorBiome) biome).getColor();
-                    sheep.setFleeceColor(color);
-                    ColorAmuletItem.AmuletEffect effect = ColorAmuletItem.getEffectByColor(color);
-                    sheep.addPotionEffect(new EffectInstance(effect.effect.getPotion(), 1000000, effect.effect.getAmplifier(), false, false));
+                DyeColor color = ((ColorBiome) biome).getColor();
+                sheep.setFleeceColor(color);
+                ColorAmuletItem.AmuletEffect effect = ColorAmuletItem.getEffectByColor(color);
+                sheep.addPotionEffect(new EffectInstance(effect.effect.getPotion(), 1000000, effect.effect.getAmplifier(), false, false));
             }
         }
     }

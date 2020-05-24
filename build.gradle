@@ -70,8 +70,7 @@ minecraft {
                 }
             }
 
-            args '--mod', 'coffeecolor', '--all', '--output', '"' + rootProject.file('src/generated/resources/') + '"',
-                    '--existing', '"' + rootProject.file('src/main/resources') + '"'
+            args '--mod', 'coffeecolor', '--all', '--output', '"' + rootProject.file('src/generated/resources/') + '"', '--existing', '"' + rootProject.file('src/main/resources') + '"'
         }
     }
 }

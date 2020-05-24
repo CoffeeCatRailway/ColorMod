@@ -8,10 +8,8 @@ import coffeecatrailway.coffeecolor.common.item.MagicColorDyeItem;
 import coffeecatrailway.coffeecolor.registrate.ColorTags;
 import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.RegistryEntry;
-import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.data.ShapelessRecipeBuilder;
 import net.minecraft.item.DyeColor;
-import net.minecraft.item.Items;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraftforge.common.Tags;
 
