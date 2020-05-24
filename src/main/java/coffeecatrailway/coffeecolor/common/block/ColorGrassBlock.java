@@ -1,8 +1,10 @@
 package coffeecatrailway.coffeecolor.common.block;
 
+import coffeecatrailway.coffeecolor.common.biome.ColorBiome;
 import coffeecatrailway.coffeecolor.registry.ColorBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.IGrowable;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.util.Direction;
@@ -10,14 +12,14 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
+import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
-import net.minecraft.world.gen.feature.DecoratedFeatureConfig;
 import net.minecraft.world.gen.feature.FlowersFeature;
 import net.minecraft.world.lighting.LightEngine;
 import net.minecraft.world.server.ServerWorld;
 
-import java.util.List;
-import java.util.Random;
+import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * @author CoffeeCatRailway
@@ -57,16 +59,15 @@ public class ColorGrassBlock extends Block implements IGrowable {
                     if (!blockstate2.isAir())
                         break;
 
-                    BlockState blockstate1; // TODO: Added other vegetation
-                    if (rand.nextInt(8) == 0) {
-                        List<ConfiguredFeature<?, ?>> list = world.getBiome(blockpos1).getFlowers();
-                        if (list.isEmpty())
+                    BlockState blockstate1 = blockstate;
+                    Biome biome = world.getBiome(blockpos1);
+                    if (rand.nextInt(8) == 0 && biome instanceof ColorBiome) {
+                        List<BlockState> flowers = new ArrayList<>();
+                        ((ColorBiome) biome).getFlowers(flowers);
+                        if (flowers.isEmpty())
                             break;
-
-                        ConfiguredFeature<?, ?> configuredfeature = ((DecoratedFeatureConfig) (list.get(0)).config).feature;
-                        blockstate1 = ((FlowersFeature) configuredfeature.feature).getFlowerToPlace(rand, blockpos1, configuredfeature.config);
-                    } else
-                        blockstate1 = blockstate;
+                        blockstate1 = flowers.get(rand.nextInt(flowers.size()));
+                    }
 
                     if (blockstate1.isValidPosition(world, blockpos1))
                         world.setBlockState(blockpos1, blockstate1, 3);

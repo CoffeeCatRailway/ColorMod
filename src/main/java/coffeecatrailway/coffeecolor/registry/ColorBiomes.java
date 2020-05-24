@@ -124,10 +124,10 @@ public class ColorBiomes {
     public static final RegistryEntry<GrayBiome> GRAY_PLAINS = REGISTRATE.biome("gray_plains", GrayBiome::new)
             .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
             .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
-    public static final RegistryEntry<GrayBiome> GRAY_FOREST = REGISTRATE.biome("gray__forest", GrayBiome::new)
+    public static final RegistryEntry<GrayBiome> GRAY_FOREST = REGISTRATE.biome("gray_forest", GrayBiome::new)
             .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
             .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
-    public static final RegistryEntry<GrayBiome> GRAY_FOREST_HILLS = REGISTRATE.biome("gray__forest_hills", GrayBiome::new)
+    public static final RegistryEntry<GrayBiome> GRAY_FOREST_HILLS = REGISTRATE.biome("gray_forest_hills", GrayBiome::new)
             .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
             .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
 

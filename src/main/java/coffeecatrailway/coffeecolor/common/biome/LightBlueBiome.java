@@ -2,7 +2,12 @@ package coffeecatrailway.coffeecolor.common.biome;
 
 import coffeecatrailway.coffeecolor.registry.ColorBlocks;
 import coffeecatrailway.coffeecolor.registry.ColorFeatures;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.DyeColor;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author CoffeeCatRailway
@@ -12,6 +17,11 @@ public class LightBlueBiome extends ColorBiome {
 
     public LightBlueBiome(Builder builder) {
         super(builder, DyeColor.LIGHT_BLUE);
+    }
+
+    @Override
+    public void getFlowers(List<BlockState> flowers) {
+        flowers.add(Blocks.BLUE_ORCHID.getDefaultState());
     }
 
     @Override
