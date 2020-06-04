@@ -219,6 +219,7 @@
   "item.coffeecolor.brown_gem": "Brown Gem",
   "item.coffeecolor.color_amulet": "Color Amulet",
   "item.coffeecolor.color_monster_spawn_egg": "Color Monster Spawn Egg",
+  "item.coffeecolor.color_ring": "Color Ring",
   "item.coffeecolor.cyan_gem": "Cyan Gem",
   "item.coffeecolor.gray_gem": "Gray Gem",
   "item.coffeecolor.green_gem": "Green Gem",
@@ -234,6 +235,6 @@
   "item.coffeecolor.white_gem": "White Gem",
   "item.coffeecolor.yellow_gem": "Yellow Gem",
   "itemGroup.coffeecolor": "Coffee's Colored Dimension",
-  "key.coffeecolor.amulet": "Activate Color Amulet",
-  "key.coffeecolor.category": "Coffee's Color Mod"
+  "key.coffeecolor.category": "Coffee's Color Mod",
+  "key.coffeecolor.useArtifact": "Activate Color Artifact"
 }

@@ -118,12 +118,14 @@ public class ColorTags {
             LOGS.values().forEach(tag -> provider.getBuilder(tag).build(tag.getId()));
 
             provider.getBuilder(Items.CURIOS_NECKLACE).build(Items.CURIOS_NECKLACE.getId());
+            provider.getBuilder(Items.CURIOS_RING).build(Items.CURIOS_RING.getId());
             provider.getBuilder(Tags.Items.GEMS).add(Items.COLOR_GEMS).build(Tags.Items.GEMS.getId());
 
             ColorMod.LOGGER.info("DataGen: Item tags");
         }
 
         public static final Tag<Item> CURIOS_NECKLACE = tag("curios", "necklace");
+        public static final Tag<Item> CURIOS_RING = tag("curios", "ring");
         public static final Tag<Item> COLOR_GEMS = tag("color_gems");
 
         public static final Tag<Item> WHITE_LOGS = tagLog("white_logs");

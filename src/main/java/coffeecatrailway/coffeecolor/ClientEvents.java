@@ -3,9 +3,9 @@ package coffeecatrailway.coffeecolor;
 import coffeecatrailway.coffeecolor.client.entity.ColorMonsterRenderer;
 import coffeecatrailway.coffeecolor.client.tileentity.ColorPortalTileEntityRenderer;
 import coffeecatrailway.coffeecolor.common.IHasColor;
-import coffeecatrailway.coffeecolor.integration.CuriosIntegration;
+import coffeecatrailway.coffeecolor.integration.curios.CuriosIntegration;
 import coffeecatrailway.coffeecolor.network.PacketHandler;
-import coffeecatrailway.coffeecolor.network.UseColorAmuletMessage;
+import coffeecatrailway.coffeecolor.network.UseColorArtifactMessage;
 import coffeecatrailway.coffeecolor.registry.ColorBlocks;
 import coffeecatrailway.coffeecolor.registry.ColorEntities;
 import coffeecatrailway.coffeecolor.registry.ColorTileEntities;
@@ -91,11 +91,14 @@ public class ClientEvents {
     @SubscribeEvent(priority = EventPriority.NORMAL, receiveCanceled = true)
     public static void keyPressed(InputEvent.KeyInputEvent event) {
         Minecraft minecraft = Minecraft.getInstance();
-        if (minecraft.player != null && ColorMod.ACTIVE_AMULET.isPressed()) {
-            ColorMod.LOGGER.debug("Amulet keybind pressed!");
+        if (minecraft.player != null && ColorMod.USE_COLOR_ARTIFACT.isPressed()) {
             ClientPlayerEntity player = minecraft.player;
-            if (!CuriosIntegration.getAmuletStack(player).isEmpty())
-                PacketHandler.INSTANCE.sendToServer(new UseColorAmuletMessage());
+            for (ItemStack stack : CuriosIntegration.getArtifactStack(player)) {
+                if (!stack.isEmpty()) {
+                    PacketHandler.INSTANCE.sendToServer(new UseColorArtifactMessage());
+                    break;
+                }
+            }
         }
     }
 }

@@ -18,9 +18,9 @@ import net.minecraft.world.World;
  * @author CoffeeCatRailway
  * Created: 23/05/2020
  */
-public class ColorAmuletRecipe extends SpecialRecipe {
+public class ColorRingRecipe extends SpecialRecipe {
 
-    public ColorAmuletRecipe(ResourceLocation id) {
+    public ColorRingRecipe(ResourceLocation id) {
         super(id);
     }
 
@@ -30,11 +30,11 @@ public class ColorAmuletRecipe extends SpecialRecipe {
         if (!gemStack.isEmpty()) {
             ColorGemItem gem = (ColorGemItem) gemStack.getItem();
             Item goldIngot = Items.GOLD_INGOT;
-            return inv.getStackInSlot(1).getItem() == goldIngot
+            return inv.getStackInSlot(1).getItem() == gem
                     && inv.getStackInSlot(3).getItem() == goldIngot
                     && inv.getStackInSlot(4).getItem() == Items.DIAMOND
                     && inv.getStackInSlot(5).getItem() == goldIngot
-                    && inv.getStackInSlot(7).getItem() == gem;
+                    && inv.getStackInSlot(7).getItem() == goldIngot;
         }
         return false;
     }
@@ -44,7 +44,7 @@ public class ColorAmuletRecipe extends SpecialRecipe {
         ItemStack gemStack = this.hasColorGem(inv);
         if (!gemStack.isEmpty()) {
             ColorGemItem gem = (ColorGemItem) gemStack.getItem();
-            ItemStack amulet = new ItemStack(ColorItems.COLOR_AMULET.get());
+            ItemStack amulet = new ItemStack(ColorItems.COLOR_RING.get());
             amulet.getOrCreateTag().putByte(ColorArtifactItem.TAG_COLOR, (byte) (gem.getColorByValue(gem.getColor()).getId() & 15));
             return amulet;
         }
@@ -67,6 +67,6 @@ public class ColorAmuletRecipe extends SpecialRecipe {
 
     @Override
     public IRecipeSerializer<?> getSerializer() {
-        return ColorRecipes.COLOR_AMULET_SERIALIZER.get();
+        return ColorRecipes.COLOR_RING_SERIALIZER.get();
     }
 }

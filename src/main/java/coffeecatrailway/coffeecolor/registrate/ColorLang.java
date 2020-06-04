@@ -15,8 +15,8 @@ public class ColorLang implements NonNullConsumer<RegistrateLangProvider> {
     @Override
     public void accept(RegistrateLangProvider provider) {
         provider.add(ColorMod.GROUP, "Coffee's Colored Dimension");
-        provider.add(ColorMod.ACTIVE_AMULET.getKeyDescription(), "Activate Color Amulet");
-        provider.add(ColorMod.ACTIVE_AMULET.getKeyCategory(), "Coffee's Color Mod");
+        provider.add(ColorMod.USE_COLOR_ARTIFACT.getKeyDescription(), "Activate Color Artifact");
+        provider.add(ColorMod.USE_COLOR_ARTIFACT.getKeyCategory(), "Coffee's Color Mod");
 
         ColorMod.LOGGER.info("DataGen: Lang");
     }

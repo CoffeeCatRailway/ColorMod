@@ -4,12 +4,14 @@ import coffeecatrailway.coffeecolor.ColorMod;
 import coffeecatrailway.coffeecolor.common.block.ColorGemOreBlock;
 import coffeecatrailway.coffeecolor.common.item.ColorAmuletItem;
 import coffeecatrailway.coffeecolor.common.item.ColorGemItem;
+import coffeecatrailway.coffeecolor.common.item.ColorRingItem;
 import coffeecatrailway.coffeecolor.common.item.MagicColorDyeItem;
 import coffeecatrailway.coffeecolor.registrate.ColorTags;
 import com.tterrag.registrate.util.DataIngredient;
 import com.tterrag.registrate.util.RegistryEntry;
 import net.minecraft.data.ShapelessRecipeBuilder;
 import net.minecraft.item.DyeColor;
+import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraftforge.common.Tags;
 
@@ -32,6 +34,9 @@ public class ColorItems {
     public static final RegistryEntry<ColorAmuletItem> COLOR_AMULET = REGISTRATE.item("color_amulet", ColorAmuletItem::new).properties(prop -> prop.maxStackSize(1))
             .defaultLang().tag(ColorTags.Items.CURIOS_NECKLACE)
             .model((ctx, provider) -> provider.generated(ctx::getEntry, ColorMod.getLocation("item/color_amulet_chain"), ColorMod.getLocation("item/color_amulet_gem"))).register();
+    public static final RegistryEntry<ColorRingItem> COLOR_RING = REGISTRATE.item("color_ring", ColorRingItem::new).properties(prop -> prop.maxStackSize(5))
+            .defaultLang().tag(ColorTags.Items.CURIOS_RING)
+            .model((ctx, provider) -> provider.generated(ctx::getEntry, ColorMod.getLocation("item/color_ring"), ColorMod.getLocation("item/color_ring_gem"))).register();
 
     public static final RegistryEntry<ColorGemItem> WHITE_GEM = registerGem("white_gem", DyeColor.WHITE, ColorBlocks.WHITE_GEM_ORE);
     public static final RegistryEntry<ColorGemItem> ORANGE_GEM = registerGem("orange_gem", DyeColor.ORANGE, ColorBlocks.ORANGE_GEM_ORE);
@@ -50,9 +55,6 @@ public class ColorItems {
     public static final RegistryEntry<ColorGemItem> RED_GEM = registerGem("red_gem", DyeColor.RED, ColorBlocks.RED_GEM_ORE);
     public static final RegistryEntry<ColorGemItem> BLACK_GEM = registerGem("black_gem", DyeColor.BLACK, ColorBlocks.BLACK_GEM_ORE);
 
-    public static void load() {
-        ColorMod.LOGGER.info("Register items");
-    }
 
     private static RegistryEntry<ColorGemItem> registerGem(String id, DyeColor color, Supplier<ColorGemOreBlock> ore) {
         return REGISTRATE.item(id, prop -> new ColorGemItem(prop, color)).defaultLang().tag(ColorTags.Items.COLOR_GEMS)
@@ -60,5 +62,9 @@ public class ColorItems {
                     provider.blasting(DataIngredient.items(ore.get()), ctx::getEntry, 1.0f);
                     provider.cooking(DataIngredient.items(ore.get()), ctx::getEntry, 1.0f, 200, IRecipeSerializer.SMELTING);
                 }).model((ctx, provider) -> provider.generated(ctx::getEntry, ColorMod.getLocation("item/color_gem"))).register();
+    }
+
+    public static void load() {
+        ColorMod.LOGGER.info("Register items");
     }
 }

@@ -1,12 +1,13 @@
 package coffeecatrailway.coffeecolor.integration;
 
 import coffeecatrailway.coffeecolor.ColorMod;
-import coffeecatrailway.coffeecolor.common.item.ColorAmuletItem;
+import coffeecatrailway.coffeecolor.common.item.ColorArtifactItem;
 import coffeecatrailway.coffeecolor.registry.ColorItems;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.ingredients.subtypes.ISubtypeInterpreter;
 import mezz.jei.api.registration.ISubtypeRegistration;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 
 /**
@@ -18,11 +19,13 @@ public class ColorJeiPlugin implements IModPlugin {
 
     @Override
     public void registerItemSubtypes(ISubtypeRegistration registration) {
-        registration.registerSubtypeInterpreter(ColorItems.COLOR_AMULET.get(), stack -> {
+        ISubtypeInterpreter interpreter = stack -> {
             if (!stack.hasTag())
                 return ISubtypeInterpreter.NONE;
-            return String.valueOf(stack.getTag().getByte(ColorAmuletItem.TAG_COLOR));
-        });
+            return String.valueOf(stack.getTag().getByte(ColorArtifactItem.TAG_COLOR));
+        };
+        registration.registerSubtypeInterpreter(ColorItems.COLOR_AMULET.get(), interpreter);
+        registration.registerSubtypeInterpreter(ColorItems.COLOR_RING.get(), interpreter);
     }
 
     @Override

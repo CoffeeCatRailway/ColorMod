@@ -20,7 +20,7 @@ public class PacketHandler {
                 .clientAcceptedVersions(PROTOCOL_VERSION::equals)
                 .serverAcceptedVersions(PROTOCOL_VERSION::equals)
                 .simpleChannel();
-        register(UseColorAmuletMessage.class, new UseColorAmuletMessage());
+        register(UseColorArtifactMessage.class, new UseColorArtifactMessage());
 
         ColorMod.LOGGER.info("Common Event: Register packets");
     }

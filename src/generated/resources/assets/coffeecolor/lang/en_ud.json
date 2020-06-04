@@ -219,6 +219,7 @@
   "item.coffeecolor.brown_gem": "\u026F\u01DD\u2141 u\u028Do\u0279\u15FA",
   "item.coffeecolor.color_amulet": "\u0287\u01DD\u05DFn\u026F\u2C6F \u0279o\u05DFo\u0186",
   "item.coffeecolor.color_monster_spawn_egg": "bb\u018E u\u028D\u0250dS \u0279\u01DD\u0287suoW \u0279o\u05DFo\u0186",
+  "item.coffeecolor.color_ring": "bu\u0131\u1D1A \u0279o\u05DFo\u0186",
   "item.coffeecolor.cyan_gem": "\u026F\u01DD\u2141 u\u0250\u028E\u0186",
   "item.coffeecolor.gray_gem": "\u026F\u01DD\u2141 \u028E\u0250\u0279\u2141",
   "item.coffeecolor.green_gem": "\u026F\u01DD\u2141 u\u01DD\u01DD\u0279\u2141",
@@ -234,6 +235,6 @@
   "item.coffeecolor.white_gem": "\u026F\u01DD\u2141 \u01DD\u0287\u0131\u0265M",
   "item.coffeecolor.yellow_gem": "\u026F\u01DD\u2141 \u028Do\u05DF\u05DF\u01DD\u028E",
   "itemGroup.coffeecolor": "uo\u0131su\u01DD\u026F\u0131\u15E1 p\u01DD\u0279o\u05DFo\u0186 s,\u01DD\u01DD\u025F\u025Fo\u0186",
-  "key.coffeecolor.amulet": "\u0287\u01DD\u05DFn\u026F\u2C6F \u0279o\u05DFo\u0186 \u01DD\u0287\u0250\u028C\u0131\u0287\u0254\u2C6F",
-  "key.coffeecolor.category": "poW \u0279o\u05DFo\u0186 s,\u01DD\u01DD\u025F\u025Fo\u0186"
+  "key.coffeecolor.category": "poW \u0279o\u05DFo\u0186 s,\u01DD\u01DD\u025F\u025Fo\u0186",
+  "key.coffeecolor.useArtifact": "\u0287\u0254\u0250\u025F\u0131\u0287\u0279\u2C6F \u0279o\u05DFo\u0186 \u01DD\u0287\u0250\u028C\u0131\u0287\u0254\u2C6F"
 }

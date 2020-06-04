@@ -1,8 +1,8 @@
 package coffeecatrailway.coffeecolor;
 
 import coffeecatrailway.coffeecolor.common.biome.ColorBiome;
-import coffeecatrailway.coffeecolor.common.item.ColorAmuletItem;
-import coffeecatrailway.coffeecolor.integration.CuriosIntegration;
+import coffeecatrailway.coffeecolor.common.item.ColorArtifactItem;
+import coffeecatrailway.coffeecolor.integration.curios.CuriosIntegration;
 import coffeecatrailway.coffeecolor.network.PacketHandler;
 import coffeecatrailway.coffeecolor.registrate.ColorLang;
 import coffeecatrailway.coffeecolor.registrate.ColorModels;
@@ -21,16 +21,20 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.biome.Biome;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.DimensionManager;
+import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.world.RegisterDimensionsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import org.apache.commons.lang3.tuple.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.lwjgl.glfw.GLFW;
@@ -44,7 +48,9 @@ public class ColorMod {
     public static final Logger LOGGER = LogManager.getLogger();
     public static ColorRegistrate REGISTRATE;
 
-    public static KeyBinding ACTIVE_AMULET = new KeyBinding("key." + MOD_ID + ".amulet", GLFW.GLFW_KEY_H, "key." + MOD_ID + ".category");
+    public static KeyBinding USE_COLOR_ARTIFACT = new KeyBinding("key." + MOD_ID + ".useArtifact", GLFW.GLFW_KEY_H, "key." + MOD_ID + ".category");
+
+    public static ColorConfig SERVER_CONFIG;
 
     public static final ItemGroup GROUP = new ItemGroup(MOD_ID) {
         @Override
@@ -57,6 +63,11 @@ public class ColorMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::setupClient);
         modEventBus.addListener(this::setupCommon);
+
+        final Pair<ColorConfig, ForgeConfigSpec> serverConfig = new ForgeConfigSpec.Builder().configure(ColorConfig::new);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, serverConfig.getRight());
+        SERVER_CONFIG = serverConfig.getLeft();
+
         CuriosIntegration.init();
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -89,7 +100,7 @@ public class ColorMod {
         DistExecutor.runWhenOn(Dist.CLIENT, () -> ClientEvents::entityRenderers);
         DistExecutor.runWhenOn(Dist.CLIENT, () -> ClientEvents::tileEntityRenderers);
 
-        ClientRegistry.registerKeyBinding(ACTIVE_AMULET);
+        ClientRegistry.registerKeyBinding(USE_COLOR_ARTIFACT);
         ColorMod.LOGGER.info("Client Event: Register key bind");
     }
 
@@ -113,8 +124,8 @@ public class ColorMod {
                 SheepEntity sheep = ((SheepEntity) entity);
                 DyeColor color = ((ColorBiome) biome).getColor();
                 sheep.setFleeceColor(color);
-                ColorAmuletItem.AmuletEffect effect = ColorAmuletItem.getEffectByColor(color);
-                sheep.addPotionEffect(new EffectInstance(effect.effect.getPotion(), 1000000, effect.effect.getAmplifier(), false, false));
+                ColorArtifactItem.AmuletEffectBuilder effect = ColorArtifactItem.getEffectByColor(color);
+                sheep.addPotionEffect(new EffectInstance(effect.getEffect().getPotion(), 1000000, effect.getEffect().getAmplifier(), false, false));
             }
         }
     }
