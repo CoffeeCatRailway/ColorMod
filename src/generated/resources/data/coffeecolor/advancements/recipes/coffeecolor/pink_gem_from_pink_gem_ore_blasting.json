@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "coffeecolor:purple_gem_from"
+      "coffeecolor:pink_gem_from_pink_gem_ore_blasting"
     ]
   },
   "criteria": {
-    "has_purple_gem_ore": {
+    "has_pink_gem_ore": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "coffeecolor:purple_gem_ore"
+            "item": "coffeecolor:pink_gem_ore"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "coffeecolor:purple_gem_from"
+        "recipe": "coffeecolor:pink_gem_from_pink_gem_ore_blasting"
       }
     }
   },
   "requirements": [
     [
-      "has_purple_gem_ore",
+      "has_pink_gem_ore",
       "has_the_recipe"
     ]
   ]

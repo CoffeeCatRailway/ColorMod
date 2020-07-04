@@ -2,7 +2,7 @@ package coffeecatrailway.coffeecolor.registry;
 
 import coffeecatrailway.coffeecolor.ColorMod;
 import coffeecatrailway.coffeecolor.common.tileentity.ColorPortalTileEntity;
-import com.tterrag.registrate.util.RegistryEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.tileentity.TileEntityType;
 
 import static coffeecatrailway.coffeecolor.ColorMod.REGISTRATE;

@@ -1,18 +1,21 @@
 package coffeecatrailway.coffeecolor.registry;
 
 import coffeecatrailway.coffeecolor.ColorMod;
+import coffeecatrailway.coffeecolor.client.item.ColorStaffItemRenderer;
 import coffeecatrailway.coffeecolor.common.block.ColorGemOreBlock;
-import coffeecatrailway.coffeecolor.common.item.ColorAmuletItem;
-import coffeecatrailway.coffeecolor.common.item.ColorGemItem;
-import coffeecatrailway.coffeecolor.common.item.ColorRingItem;
-import coffeecatrailway.coffeecolor.common.item.MagicColorDyeItem;
+import coffeecatrailway.coffeecolor.common.item.*;
 import coffeecatrailway.coffeecolor.registrate.ColorTags;
 import com.tterrag.registrate.util.DataIngredient;
-import com.tterrag.registrate.util.RegistryEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
+import com.tterrag.registrate.util.nullness.NonNullBiConsumer;
+import net.minecraft.data.ShapedRecipeBuilder;
 import net.minecraft.data.ShapelessRecipeBuilder;
 import net.minecraft.item.DyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.generators.ModelBuilder;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.Tags;
 
 import java.util.function.Supplier;

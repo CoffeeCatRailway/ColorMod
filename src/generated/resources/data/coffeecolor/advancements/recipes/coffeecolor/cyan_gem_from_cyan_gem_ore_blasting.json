@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "coffeecolor:white_gem_from"
+      "coffeecolor:cyan_gem_from_cyan_gem_ore_blasting"
     ]
   },
   "criteria": {
-    "has_white_gem_ore": {
+    "has_cyan_gem_ore": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "coffeecolor:white_gem_ore"
+            "item": "coffeecolor:cyan_gem_ore"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "coffeecolor:white_gem_from"
+        "recipe": "coffeecolor:cyan_gem_from_cyan_gem_ore_blasting"
       }
     }
   },
   "requirements": [
     [
-      "has_white_gem_ore",
+      "has_cyan_gem_ore",
       "has_the_recipe"
     ]
   ]

@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "coffeecolor:cyan_gem_from"
+      "coffeecolor:magenta_gem_from_magenta_gem_ore_blasting"
     ]
   },
   "criteria": {
-    "has_cyan_gem_ore": {
+    "has_magenta_gem_ore": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "coffeecolor:cyan_gem_ore"
+            "item": "coffeecolor:magenta_gem_ore"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "coffeecolor:cyan_gem_from"
+        "recipe": "coffeecolor:magenta_gem_from_magenta_gem_ore_blasting"
       }
     }
   },
   "requirements": [
     [
-      "has_cyan_gem_ore",
+      "has_magenta_gem_ore",
       "has_the_recipe"
     ]
   ]

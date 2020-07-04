@@ -6,6 +6,7 @@ import coffeecatrailway.coffeecolor.common.tileentity.ColorPortalTileEntity;
 import coffeecatrailway.coffeecolor.registrate.ColorTags;
 import coffeecatrailway.coffeecolor.registry.ColorBiomes;
 import coffeecatrailway.coffeecolor.registry.ColorBlocks;
+import coffeecatrailway.coffeecolor.registry.ColorTileEntities;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.ServerPlayerEntity;
@@ -91,7 +92,7 @@ public class ColorPortalBlock extends ContainerBlock {
     @Nullable
     @Override
     public TileEntity createNewTileEntity(IBlockReader world) {
-        return new ColorPortalTileEntity();
+        return new ColorPortalTileEntity(ColorTileEntities.COLOR_PORTAL.get());
     }
 
     @Override

@@ -3,7 +3,7 @@ package coffeecatrailway.coffeecolor.registry;
 import coffeecatrailway.coffeecolor.ColorMod;
 import coffeecatrailway.coffeecolor.common.entity.ColorMonsterEntity;
 import com.tterrag.registrate.util.LazySpawnEggItem;
-import com.tterrag.registrate.util.RegistryEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullFunction;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;

@@ -3,7 +3,7 @@ package coffeecatrailway.coffeecolor.registry;
 import coffeecatrailway.coffeecolor.ColorMod;
 import coffeecatrailway.coffeecolor.common.biome.*;
 import coffeecatrailway.coffeecolor.common.dimension.ColorDimension;
-import com.tterrag.registrate.util.RegistryEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.dimension.DimensionType;
@@ -45,184 +45,184 @@ public class ColorBiomes {
 
     // WHITE
     public static final RegistryEntry<WhiteBiome> WHITE_PLAINS = REGISTRATE.biome("white_plains", WhiteBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<WhiteBiome> WHITE_FOREST = REGISTRATE.biome("white_forest", WhiteBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<WhiteBiome> WHITE_FOREST_HILLS = REGISTRATE.biome("white_forest_hills", WhiteBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // ORANGE
     public static final RegistryEntry<OrangeBiome> ORANGE_PLAINS = REGISTRATE.biome("orange_plains", OrangeBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<OrangeBiome> ORANGE_FOREST = REGISTRATE.biome("orange_forest", OrangeBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<OrangeBiome> ORANGE_FOREST_HILLS = REGISTRATE.biome("orange_forest_hills", OrangeBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // MAGENTA
     public static final RegistryEntry<MagentaBiome> MAGENTA_PLAINS = REGISTRATE.biome("magenta_plains", MagentaBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<MagentaBiome> MAGENTA_FOREST = REGISTRATE.biome("magenta_forest", MagentaBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<MagentaBiome> MAGENTA_FOREST_HILLS = REGISTRATE.biome("magenta_forest_hills", MagentaBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // LIGHT_BLUE
     public static final RegistryEntry<LightBlueBiome> LIGHT_BLUE_PLAINS = REGISTRATE.biome("light_blue_plains", LightBlueBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<LightBlueBiome> LIGHT_BLUE_FOREST = REGISTRATE.biome("light_blue_forest", LightBlueBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<LightBlueBiome> LIGHT_BLUE_FOREST_HILLS = REGISTRATE.biome("light_blue_hills", LightBlueBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // YELLOW
     public static final RegistryEntry<YellowBiome> YELLOW_PLAINS = REGISTRATE.biome("yellow_plains", YellowBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<YellowBiome> YELLOW_FOREST = REGISTRATE.biome("yellow_forest", YellowBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<YellowBiome> YELLOW_FOREST_HILLS = REGISTRATE.biome("yellow_forest_hills", YellowBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // LIME
     public static final RegistryEntry<LimeBiome> LIME_PLAINS = REGISTRATE.biome("lime_plains", LimeBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<LimeBiome> LIME_FOREST = REGISTRATE.biome("lime_forest", LimeBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<LimeBiome> LIME_FOREST_HILLS = REGISTRATE.biome("lime_forest_hills", LimeBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // PINK
     public static final RegistryEntry<PinkBiome> PINK_PLAINS = REGISTRATE.biome("pink_plains", PinkBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<PinkBiome> PINK_FOREST = REGISTRATE.biome("pink_forest", PinkBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<PinkBiome> PINK_FOREST_HILLS = REGISTRATE.biome("pink_forest_hills", PinkBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // GRAY
     public static final RegistryEntry<GrayBiome> GRAY_PLAINS = REGISTRATE.biome("gray_plains", GrayBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<GrayBiome> GRAY_FOREST = REGISTRATE.biome("gray_forest", GrayBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<GrayBiome> GRAY_FOREST_HILLS = REGISTRATE.biome("gray_forest_hills", GrayBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // LIGHT_GRAY
     public static final RegistryEntry<LightGrayBiome> LIGHT_GRAY_PLAINS = REGISTRATE.biome("light_gray_plains", LightGrayBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<LightGrayBiome> LIGHT_GRAY_FOREST = REGISTRATE.biome("light_gray_forest", LightGrayBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<LightGrayBiome> LIGHT_GRAY_FOREST_HILLS = REGISTRATE.biome("light_gray_forest_hills", LightGrayBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // CYAN
     public static final RegistryEntry<CyanBiome> CYAN_PLAINS = REGISTRATE.biome("cyan_plains", CyanBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<CyanBiome> CYAN_FOREST = REGISTRATE.biome("cyan_forest", CyanBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<CyanBiome> CYAN_FOREST_HILLS = REGISTRATE.biome("cyan_forest_hills", CyanBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // PURPLE
     public static final RegistryEntry<PurpleBiome> PURPLE_PLAINS = REGISTRATE.biome("purple_plains", PurpleBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<PurpleBiome> PURPLE_FOREST = REGISTRATE.biome("purple_forest", PurpleBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<PurpleBiome> PURPLE_FOREST_HILLS = REGISTRATE.biome("purple_forest_hills", PurpleBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // BLUE
     public static final RegistryEntry<BlueBiome> BLUE_PLAINS = REGISTRATE.biome("blue_plains", BlueBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<BlueBiome> BLUE_FOREST = REGISTRATE.biome("blue_forest", BlueBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<BlueBiome> BLUE_FOREST_HILLS = REGISTRATE.biome("blue_forest_hills", BlueBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // BROWN
     public static final RegistryEntry<BrownBiome> BROWN_PLAINS = REGISTRATE.biome("brown_plains", BrownBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<BrownBiome> BROWN_FOREST = REGISTRATE.biome("brown_forest", BrownBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<BrownBiome> BROWN_FOREST_HILLS = REGISTRATE.biome("brown_forest_hills", BrownBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // GREEN
     public static final RegistryEntry<GreenBiome> GREEN_PLAINS = REGISTRATE.biome("green_plains", GreenBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<GreenBiome> GREEN_FOREST = REGISTRATE.biome("green_forest", GreenBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<GreenBiome> GREEN_FOREST_HILLS = REGISTRATE.biome("green_forest_hills", GreenBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // RED
     public static final RegistryEntry<RedBiome> RED_PLAINS = REGISTRATE.biome("red_plains", RedBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<RedBiome> RED_FOREST = REGISTRATE.biome("red_forest", RedBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<RedBiome> RED_FOREST_HILLS = REGISTRATE.biome("red_forest_hills", RedBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // BLACK
     public static final RegistryEntry<BlackBiome> BLACK_PLAINS = REGISTRATE.biome("black_plains", BlackBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(0.035f).temperature(0.5f).downfall(PLAINS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.PLAINS).depth(PLAINS_DEPTH).scale(.035f).temperature(.5f).downfall(PLAINS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<BlackBiome> BLACK_FOREST = REGISTRATE.biome("black_forest", BlackBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(0.05f).temperature(0.5f).downfall(FOREST_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_DEPTH).scale(.05f).temperature(.5f).downfall(FOREST_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
     public static final RegistryEntry<BlackBiome> BLACK_FOREST_HILLS = REGISTRATE.biome("black_forest_hills", BlackBiome::new)
-            .defaultPrecipitation().defaultParent().category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(0.03f).temperature(0.6f).downfall(FOREST_HILLS_DOWNFALL)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.RAIN).parent(null).category(Biome.Category.FOREST).depth(FOREST_HILLS_DEPTH).scale(.03f).temperature(.6f).downfall(FOREST_HILLS_DOWNFALL)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_BIOME_SURFACE.get())).defaultLang().register();
 
     // River
     public static final RegistryEntry<ColorRiverBiome> COLOR_RIVER = REGISTRATE.biome("color_river", ColorRiverBiome::new)
-            .precipitation(Biome.RainType.NONE).defaultParent().category(Biome.Category.RIVER).depth(RIVER_DEPTH).scale(0.0f).temperature(0.66f).downfall(0.0f)
-            .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_RIVER_SURFACE).defaultLang().register();
+            .properties(prop -> prop.precipitation(Biome.RainType.NONE).parent(null).category(Biome.Category.RIVER).depth(RIVER_DEPTH).scale(0f).temperature(.66f).downfall(0f)
+                    .surfaceBuilder(SurfaceBuilder.DEFAULT, COLOR_RIVER_SURFACE.get())).defaultLang().register();
 
     public static void addBiomeTypes() {
         BiomeDictionary.addTypes(WHITE_PLAINS.get(), BiomeDictionary.Type.PLAINS, BiomeDictionary.Type.COLD);

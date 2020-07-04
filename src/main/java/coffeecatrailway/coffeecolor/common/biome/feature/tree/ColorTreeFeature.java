@@ -53,41 +53,41 @@ public class ColorTreeFeature extends AbstractTreeFeature<ColorTreeFeatureConfig
                     int LogY = y + j2;
                     BlockPos blockpos1 = new BlockPos(xOff, LogY, zOff);
                     if (isAirOrLeaves(world, blockpos1)) {
-                        this.func_227216_a_(world, rand, blockpos1, logPos, boundingBox, config);
-                        this.func_227216_a_(world, rand, blockpos1.east(), logPos, boundingBox, config);
-                        this.func_227216_a_(world, rand, blockpos1.south(), logPos, boundingBox, config);
-                        this.func_227216_a_(world, rand, blockpos1.east().south(), logPos, boundingBox, config);
+                        this.setLog(world, rand, blockpos1, logPos, boundingBox, config);
+                        this.setLog(world, rand, blockpos1.east(), logPos, boundingBox, config);
+                        this.setLog(world, rand, blockpos1.south(), logPos, boundingBox, config);
+                        this.setLog(world, rand, blockpos1.east().south(), logPos, boundingBox, config);
                     }
                 }
 
                 for (int xOff1 = -2; xOff1 <= 0; ++xOff1) {
                     for (int zOff1 = -2; zOff1 <= 0; ++zOff1) {
                         int yOff1 = -1;
-                        this.func_227219_b_(world, rand, new BlockPos(xOff + xOff1, yOff + yOff1, zOff + zOff1), leavesPos, boundingBox, config);
-                        this.func_227219_b_(world, rand, new BlockPos(1 + xOff - xOff1, yOff + yOff1, zOff + zOff1), leavesPos, boundingBox, config);
-                        this.func_227219_b_(world, rand, new BlockPos(xOff + xOff1, yOff + yOff1, 1 + zOff - zOff1), leavesPos, boundingBox, config);
-                        this.func_227219_b_(world, rand, new BlockPos(1 + xOff - xOff1, yOff + yOff1, 1 + zOff - zOff1), leavesPos, boundingBox, config);
+                        this.setLeaf(world, rand, new BlockPos(xOff + xOff1, yOff + yOff1, zOff + zOff1), leavesPos, boundingBox, config);
+                        this.setLeaf(world, rand, new BlockPos(1 + xOff - xOff1, yOff + yOff1, zOff + zOff1), leavesPos, boundingBox, config);
+                        this.setLeaf(world, rand, new BlockPos(xOff + xOff1, yOff + yOff1, 1 + zOff - zOff1), leavesPos, boundingBox, config);
+                        this.setLeaf(world, rand, new BlockPos(1 + xOff - xOff1, yOff + yOff1, 1 + zOff - zOff1), leavesPos, boundingBox, config);
                         if ((xOff1 > -2 || zOff1 > -1) && (xOff1 != -1 || zOff1 != -2)) {
                             yOff1 = 1;
-                            this.func_227219_b_(world, rand, new BlockPos(xOff + xOff1, yOff + yOff1, zOff + zOff1), leavesPos, boundingBox, config);
-                            this.func_227219_b_(world, rand, new BlockPos(1 + xOff - xOff1, yOff + yOff1, zOff + zOff1), leavesPos, boundingBox, config);
-                            this.func_227219_b_(world, rand, new BlockPos(xOff + xOff1, yOff + yOff1, 1 + zOff - zOff1), leavesPos, boundingBox, config);
-                            this.func_227219_b_(world, rand, new BlockPos(1 + xOff - xOff1, yOff + yOff1, 1 + zOff - zOff1), leavesPos, boundingBox, config);
+                            this.setLeaf(world, rand, new BlockPos(xOff + xOff1, yOff + yOff1, zOff + zOff1), leavesPos, boundingBox, config);
+                            this.setLeaf(world, rand, new BlockPos(1 + xOff - xOff1, yOff + yOff1, zOff + zOff1), leavesPos, boundingBox, config);
+                            this.setLeaf(world, rand, new BlockPos(xOff + xOff1, yOff + yOff1, 1 + zOff - zOff1), leavesPos, boundingBox, config);
+                            this.setLeaf(world, rand, new BlockPos(1 + xOff - xOff1, yOff + yOff1, 1 + zOff - zOff1), leavesPos, boundingBox, config);
                         }
                     }
                 }
 
                 if (rand.nextBoolean()) {
-                    this.func_227219_b_(world, rand, new BlockPos(xOff, yOff + 2, zOff), leavesPos, boundingBox, config);
-                    this.func_227219_b_(world, rand, new BlockPos(xOff + 1, yOff + 2, zOff), leavesPos, boundingBox, config);
-                    this.func_227219_b_(world, rand, new BlockPos(xOff + 1, yOff + 2, zOff + 1), leavesPos, boundingBox, config);
-                    this.func_227219_b_(world, rand, new BlockPos(xOff, yOff + 2, zOff + 1), leavesPos, boundingBox, config);
+                    this.setLeaf(world, rand, new BlockPos(xOff, yOff + 2, zOff), leavesPos, boundingBox, config);
+                    this.setLeaf(world, rand, new BlockPos(xOff + 1, yOff + 2, zOff), leavesPos, boundingBox, config);
+                    this.setLeaf(world, rand, new BlockPos(xOff + 1, yOff + 2, zOff + 1), leavesPos, boundingBox, config);
+                    this.setLeaf(world, rand, new BlockPos(xOff, yOff + 2, zOff + 1), leavesPos, boundingBox, config);
                 }
 
                 for (int xOff1 = -3; xOff1 <= 4; ++xOff1) {
                     for (int zOff1 = -3; zOff1 <= 4; ++zOff1) {
                         if ((xOff1 != -3 || zOff1 != -3) && (xOff1 != -3 || zOff1 != 4) && (xOff1 != 4 || zOff1 != -3) && (xOff1 != 4 || zOff1 != 4) && (Math.abs(xOff1) < 3 || Math.abs(zOff1) < 3)) {
-                            this.func_227219_b_(world, rand, new BlockPos(xOff + xOff1, yOff, zOff + zOff1), leavesPos, boundingBox, config);
+                            this.setLeaf(world, rand, new BlockPos(xOff + xOff1, yOff, zOff + zOff1), leavesPos, boundingBox, config);
                         }
                     }
                 }
@@ -98,19 +98,19 @@ public class ColorTreeFeature extends AbstractTreeFeature<ColorTreeFeatureConfig
                             int i5 = rand.nextInt(3) + 2;
 
                             for (int l2 = 0; l2 < i5; ++l2) {
-                                this.func_227216_a_(world, rand, new BlockPos(x + xOff1, yOff - l2 - 1, z + zOff1), logPos, boundingBox, config);
+                                this.setLog(world, rand, new BlockPos(x + xOff1, yOff - l2 - 1, z + zOff1), logPos, boundingBox, config);
                             }
 
                             for (int j5 = -1; j5 <= 1; ++j5) {
                                 for (int i3 = -1; i3 <= 1; ++i3) {
-                                    this.func_227219_b_(world, rand, new BlockPos(xOff + xOff1 + j5, yOff, zOff + zOff1 + i3), leavesPos, boundingBox, config);
+                                    this.setLeaf(world, rand, new BlockPos(xOff + xOff1 + j5, yOff, zOff + zOff1 + i3), leavesPos, boundingBox, config);
                                 }
                             }
 
                             for (int k5 = -2; k5 <= 2; ++k5) {
                                 for (int l5 = -2; l5 <= 2; ++l5) {
                                     if (Math.abs(k5) != 2 || Math.abs(l5) != 2) {
-                                        this.func_227219_b_(world, rand, new BlockPos(xOff + xOff1 + k5, yOff - 1, zOff + zOff1 + l5), leavesPos, boundingBox, config);
+                                        this.setLeaf(world, rand, new BlockPos(xOff + xOff1 + k5, yOff - 1, zOff + zOff1 + l5), leavesPos, boundingBox, config);
                                     }
                                 }
                             }

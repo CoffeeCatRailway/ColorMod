@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "coffeecolor:light_blue_gem_from"
+      "coffeecolor:light_blue_gem_from_light_blue_gem_ore_blasting"
     ]
   },
   "criteria": {
@@ -19,7 +19,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "coffeecolor:light_blue_gem_from"
+        "recipe": "coffeecolor:light_blue_gem_from_light_blue_gem_ore_blasting"
       }
     }
   },

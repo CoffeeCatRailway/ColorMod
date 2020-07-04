@@ -2,16 +2,16 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "coffeecolor:black_gem_from"
+      "coffeecolor:blue_gem_from_blue_gem_ore_blasting"
     ]
   },
   "criteria": {
-    "has_black_gem_ore": {
+    "has_blue_gem_ore": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "item": "coffeecolor:black_gem_ore"
+            "item": "coffeecolor:blue_gem_ore"
           }
         ]
       }
@@ -19,13 +19,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "coffeecolor:black_gem_from"
+        "recipe": "coffeecolor:blue_gem_from_blue_gem_ore_blasting"
       }
     }
   },
   "requirements": [
     [
-      "has_black_gem_ore",
+      "has_blue_gem_ore",
       "has_the_recipe"
     ]
   ]

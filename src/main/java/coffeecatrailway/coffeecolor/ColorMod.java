@@ -6,9 +6,9 @@ import coffeecatrailway.coffeecolor.integration.curios.CuriosIntegration;
 import coffeecatrailway.coffeecolor.network.PacketHandler;
 import coffeecatrailway.coffeecolor.registrate.ColorLang;
 import coffeecatrailway.coffeecolor.registrate.ColorModels;
-import coffeecatrailway.coffeecolor.registrate.ColorRegistrate;
 import coffeecatrailway.coffeecolor.registrate.ColorTags;
 import coffeecatrailway.coffeecolor.registry.*;
+import com.tterrag.registrate.Registrate;
 import com.tterrag.registrate.providers.ProviderType;
 import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.entity.Entity;
@@ -46,7 +46,7 @@ public class ColorMod {
     public static final String MOD_ID = "coffeecolor";
 
     public static final Logger LOGGER = LogManager.getLogger();
-    public static ColorRegistrate REGISTRATE;
+    public static Registrate REGISTRATE;
 
     public static KeyBinding USE_COLOR_ARTIFACT = new KeyBinding("key." + MOD_ID + ".useArtifact", GLFW.GLFW_KEY_H, "key." + MOD_ID + ".category");
 
@@ -71,7 +71,7 @@ public class ColorMod {
         CuriosIntegration.init();
         MinecraftForge.EVENT_BUS.register(this);
 
-        REGISTRATE = ColorRegistrate.create(MOD_ID, modEventBus);
+        REGISTRATE = Registrate.create(MOD_ID).itemGroup(() -> ColorMod.GROUP);
         REGISTRATE.addDataGenerator(ProviderType.BLOCK_TAGS, ColorTags.Blocks.INSTANCE);
         REGISTRATE.addDataGenerator(ProviderType.ITEM_TAGS, ColorTags.Items.INSTANCE);
         REGISTRATE.addDataGenerator(ProviderType.BLOCKSTATE, ColorModels.INSTANCE);

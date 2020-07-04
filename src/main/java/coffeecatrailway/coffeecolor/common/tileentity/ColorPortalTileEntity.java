@@ -1,6 +1,5 @@
 package coffeecatrailway.coffeecolor.common.tileentity;
 
-import coffeecatrailway.coffeecolor.registry.ColorTileEntities;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 
@@ -10,11 +9,7 @@ import net.minecraft.tileentity.TileEntityType;
  */
 public class ColorPortalTileEntity extends TileEntity {
 
-    public ColorPortalTileEntity(TileEntityType<?> type) {
+    public ColorPortalTileEntity(TileEntityType<ColorPortalTileEntity> type) {
         super(type);
-    }
-
-    public ColorPortalTileEntity() {
-        super(ColorTileEntities.COLOR_PORTAL.get());
     }
 }

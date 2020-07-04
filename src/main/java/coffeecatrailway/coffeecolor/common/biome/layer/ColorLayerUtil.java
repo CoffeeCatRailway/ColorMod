@@ -2,7 +2,7 @@ package coffeecatrailway.coffeecolor.common.biome.layer;
 
 import coffeecatrailway.coffeecolor.ColorMod;
 import coffeecatrailway.coffeecolor.registry.ColorBiomes;
-import com.tterrag.registrate.util.RegistryEntry;
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.gen.IExtendedNoiseRandom;
