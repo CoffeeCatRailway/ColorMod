@@ -94,11 +94,11 @@ public class ColorMod {
     }
 
     public void setupClient(final FMLCommonSetupEvent event) {
-        DistExecutor.runWhenOn(Dist.CLIENT, () -> ClientEvents::itemColors);
-        DistExecutor.runWhenOn(Dist.CLIENT, () -> ClientEvents::blockColors);
-        DistExecutor.runWhenOn(Dist.CLIENT, () -> ClientEvents::renderLayers);
-        DistExecutor.runWhenOn(Dist.CLIENT, () -> ClientEvents::entityRenderers);
-        DistExecutor.runWhenOn(Dist.CLIENT, () -> ClientEvents::tileEntityRenderers);
+        DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> ClientEvents::itemColors);
+        DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> ClientEvents::blockColors);
+        DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> ClientEvents::renderLayers);
+        DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> ClientEvents::entityRenderers);
+        DistExecutor.safeRunWhenOn(Dist.CLIENT, () -> ClientEvents::tileEntityRenderers);
 
         ClientRegistry.registerKeyBinding(USE_COLOR_ARTIFACT);
         ColorMod.LOGGER.info("Client Event: Register key bind");
