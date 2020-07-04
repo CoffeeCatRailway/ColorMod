@@ -12,7 +12,7 @@ public interface IHasColor {
     int getColor(ItemStack stack, int tintindex);
 
     default int getColor() {
-        return getColor(null, 0);
+        return getColor(ItemStack.EMPTY, 0);
     }
 
     default DyeColor getColorByValue(int color) {
